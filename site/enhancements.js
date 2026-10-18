@@ -144,14 +144,23 @@ const consoleTopics = {
 
 const heroConsole = document.querySelector('#hero-console');
 const consoleMicBtn = document.querySelector('#console-mic-trigger');
+const consoleDrawerToggle = document.querySelector('#console-drawer-toggle');
+const consoleDrawer = document.querySelector('#hero-console-drawer');
 const consoleStatusText = document.querySelector('#console-status-text');
 const consoleTranscript = document.querySelector('#console-transcript');
 let consoleTimer = null;
 
-function triggerConsoleSimulation(topicKey) {
+function setConsoleDrawerOpen(isOpen) {
+  if (!consoleDrawer || !consoleDrawerToggle) return;
+  consoleDrawer.hidden = !isOpen;
+  consoleDrawerToggle.setAttribute('aria-expanded', String(isOpen));
+}
+
+function triggerConsoleSimulation(topicKey, openDrawer = false) {
   const item = consoleTopics[topicKey] || consoleTopics.comercial;
   clearTimeout(consoleTimer);
   playVoiceChime(560);
+  if (openDrawer) setConsoleDrawerOpen(true);
   if (heroConsole) heroConsole.classList.add('is-speaking');
   if (consoleMicBtn) consoleMicBtn.setAttribute('aria-pressed', 'true');
   if (consoleStatusText) consoleStatusText.textContent = item.status;
@@ -168,7 +177,7 @@ document.querySelectorAll('[data-console-topic]').forEach((btn) => {
     document.querySelectorAll('[data-console-topic]').forEach((b) =>
       b.setAttribute('aria-pressed', String(b === btn))
     );
-    triggerConsoleSimulation(btn.dataset.consoleTopic);
+    triggerConsoleSimulation(btn.dataset.consoleTopic, true);
   });
 });
 
@@ -177,9 +186,22 @@ if (consoleMicBtn) {
     const activeTopic =
       document.querySelector('[data-console-topic][aria-pressed="true"]')?.dataset.consoleTopic ||
       'comercial';
-    triggerConsoleSimulation(activeTopic);
+    triggerConsoleSimulation(activeTopic, true);
   });
 }
+
+if (consoleDrawerToggle) {
+  consoleDrawerToggle.addEventListener('click', () => {
+    const isExpanded = consoleDrawerToggle.getAttribute('aria-expanded') === 'true';
+    setConsoleDrawerOpen(!isExpanded);
+  });
+}
+
+document.addEventListener('click', (ev) => {
+  if (heroConsole && !heroConsole.contains(ev.target)) {
+    setConsoleDrawerOpen(false);
+  }
+});
 
 // ============================================================================
 // 3. BINA VOICE SMARTPHONE SIMULATOR (#bina-voice)

@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="navigation.css">
   <script defer src="vendor/gsap.min.js"></script>
   <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="velaris.js"></script>
   <script defer src="app.js"></script>
   <script defer src="enhancements.js"></script>
   <script defer src="navigation.js"></script>
@@ -529,50 +530,48 @@
         </div>
       </div>
 
-      <!-- 2.5D / 3D STAGE + INTERACTIVE LIQUID GLASS VOICE & CHAT CONSOLE -->
-      <div class="human-stage">
-        <div class="human-backdrop" aria-hidden="true"></div>
+      <!-- 2.5D / 3D STAGE + SLEEK LIQUID GLASS VOICE CAPSULE ("Conheça a voz da Bina") -->
+      <div class="human-stage" id="hero">
+        <div class="human-backdrop" aria-hidden="true">
+          <div class="human-arch-rim" aria-hidden="true"></div>
+        </div>
         <div class="human-glass" aria-hidden="true"></div>
+        <div class="human-pedestal" aria-hidden="true"></div>
 
         <div class="human-portrait-pivot">
           <img class="human-portrait" src="assets/human-hero.webp" width="933" height="1400" alt="Bina, assistente virtual da Atende Franca em ambiente acolhedor" fetchpriority="high">
         </div>
 
-        <div class="human-nameplate">
-          <span class="human-wave" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span>
-          <span>
-            <strong>Bina · Samuel · Luma</strong>
-            <small>Recepção, Comercial e Agenda integrados</small>
-          </span>
-          <a href="#equipe" aria-label="Conhecer a equipe de agentes"><i data-icon="arrow"></i></a>
-        </div>
-
-        <div class="human-caption">
-          <span class="dot"></span> INTELIGÊNCIA NO ATENDIMENTO.<br>GOVERNANÇA E PROXIMIDADE HUMANA.
-        </div>
-
-        <!-- Interactive Liquid Glass Voice & Chat Widget in Hero -->
-        <aside class="hero-glass-console" id="hero-console" aria-label="Simulador rápido da Bina no Hero">
-          <div class="console-top">
-            <span class="console-status"><span class="dot"></span> <span id="console-status-text">Bina Voice · Simulação Comercial</span></span>
-            <span class="console-badge">DEMO GUIADA</span>
-          </div>
-          <div class="console-wave-box">
-            <button type="button" class="console-mic-btn" id="console-mic-trigger" aria-pressed="false" aria-label="Ouvir simulação de voz da Bina">
-              <i data-icon="wave"></i>
+        <!-- Sleek Liquid Glass Capsule ("Conheça a voz da Bina") + Expandable Interactive Drawer -->
+        <aside class="hero-glass-console" id="hero-console" aria-label="Simulador rápido da voz da Bina no Hero">
+          <div class="hero-voice-pill">
+            <button type="button" class="hero-voice-trigger" id="console-mic-trigger" aria-pressed="false" aria-label="Ouvir a voz da Bina">
+              <span class="console-bars" aria-hidden="true">
+                <b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+              </span>
+              <span class="hero-voice-divider" aria-hidden="true"></span>
+              <span class="hero-voice-label">Conheça a voz da Bina</span>
             </button>
-            <div class="console-bars" aria-hidden="true">
-              <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
-            </div>
+            <button type="button" class="hero-voice-expand" id="console-drawer-toggle" aria-expanded="false" aria-controls="hero-console-drawer" title="Testar simulações por setor">
+              <span class="dot"></span>
+              <span id="console-mode-pill">Demo</span>
+            </button>
           </div>
-          <p class="console-transcript" id="console-transcript" aria-live="polite">
-            “Olá! Sou a Bina. Posso apresentar nossos serviços, registrar seu interesse para o Samuel ou verificar horários com a Luma.”
-          </p>
-          <div class="console-quick-pills" role="group" aria-label="Exemplos rápidos de atendimento">
-            <button type="button" data-console-topic="comercial" aria-pressed="true">Comercial</button>
-            <button type="button" data-console-topic="institucional" aria-pressed="false">Institucional</button>
-            <button type="button" data-console-topic="governo" aria-pressed="false">Cidadão / Gov</button>
-            <button type="button" data-console-topic="agenda" aria-pressed="false">Agenda Luma</button>
+
+          <div class="hero-console-drawer" id="hero-console-drawer" hidden>
+            <div class="console-top">
+              <span class="console-status"><span class="dot"></span> <span id="console-status-text">Bina Voice · Simulação Comercial</span></span>
+              <span class="console-badge">INTERATIVO</span>
+            </div>
+            <p class="console-transcript" id="console-transcript" aria-live="polite">
+              “Olá! Sou a Bina. Posso apresentar nossos serviços, registrar seu interesse para o Samuel ou verificar horários com a Luma.”
+            </p>
+            <div class="console-quick-pills" role="group" aria-label="Exemplos rápidos de atendimento">
+              <button type="button" data-console-topic="comercial" aria-pressed="true">Comercial</button>
+              <button type="button" data-console-topic="institucional" aria-pressed="false">Institucional</button>
+              <button type="button" data-console-topic="governo" aria-pressed="false">Cidadão / Gov</button>
+              <button type="button" data-console-topic="agenda" aria-pressed="false">Agenda Luma</button>
+            </div>
           </div>
         </aside>
       </div>
@@ -588,7 +587,7 @@
     </div>
   </div>
 
-  <!-- ECOSSISTEMA DE SOLUÇÕES (LIQUID GLASS CARDS) -->
+  <!-- ECOSSISTEMA DE SOLUÇÕES (MANTIDO NO BACKGROUND FIXO ORIGINAL #f7f3eb) -->
   <section class="solutions-section wrap section" id="solucoes">
     <div class="section-heading">
       <div>
@@ -599,46 +598,137 @@
     </div>
 
     <div class="solution-grid">
-      <a class="solution-card glow-card" href="#bina-voice">
-        <img class="solution-image" src="assets/voice.webp" width="1200" height="675" alt="Experiência de voz Bina Voice" loading="lazy">
-        <span class="glass-icon"><i data-icon="wave"></i></span>
-        <span class="card-number">01 / VOZ &amp; RECEPÇÃO</span>
-        <h3>Bina Voice</h3>
-        <p>Uma experiência natural para receber, tirar dúvidas, fazer triagem e encaminhar clientes ou cidadãos.</p>
-        <span class="card-link">Testar no smartphone <i data-icon="arrow"></i></span>
+      <!-- Card 01: Bina Voice (1:1 Interactive Liquid Glass Showcase) -->
+      <a class="solution-card glow-card af-interactive-card" href="#bina-voice">
+        <div class="af-card-stage stage-voice" aria-hidden="true">
+          <div class="af-stage-topbar">
+            <span class="af-stage-pill"><span class="dot"></span> BINA VOICE 3D</span>
+            <span class="af-stage-status">24/7 ATIVO</span>
+          </div>
+          <div class="af-voice-orb-wrap">
+            <img class="af-stage-avatar" src="assets/bina-visor-teal.png" width="160" height="160" alt="" loading="lazy">
+            <div class="af-voice-waves">
+              <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+            </div>
+          </div>
+          <div class="af-stage-dock">
+            <span><i data-icon="mic"></i> Voz Natural</span>
+            <span><i data-icon="messages"></i> WhatsApp</span>
+            <span><i data-icon="shield"></i> RAG Oficial</span>
+          </div>
+        </div>
+        <div class="af-card-body">
+          <div class="af-card-meta">
+            <span class="glass-icon"><i data-icon="wave"></i></span>
+            <span class="card-number">01 / VOZ &amp; RECEPÇÃO</span>
+          </div>
+          <h3>Bina Voice</h3>
+          <p>Uma experiência natural para receber, tirar dúvidas, fazer triagem e encaminhar clientes ou cidadãos.</p>
+          <span class="card-link">Testar no smartphone <i data-icon="arrow"></i></span>
+        </div>
       </a>
 
-      <a class="solution-card glow-card" href="#central">
-        <img class="solution-image" src="assets/inbox.webp" width="1200" height="675" alt="Central de atendimento com IA" loading="lazy">
-        <span class="glass-icon"><i data-icon="messages"></i></span>
-        <span class="card-number">02 / OPERAÇÃO HÍBRIDA</span>
-        <h3>Central com contexto</h3>
-        <p>Caixa de entrada unificada que aproxima os agentes de IA e sua equipe humana sem perder o histórico.</p>
-        <span class="card-link">Abrir suíte interativa <i data-icon="arrow"></i></span>
+      <!-- Card 02: Central com Contexto (1:1 Interactive Liquid Glass Showcase) -->
+      <a class="solution-card glow-card af-interactive-card" href="#central">
+        <div class="af-card-stage stage-inbox" aria-hidden="true">
+          <div class="af-stage-topbar">
+            <span class="af-stage-pill"><span class="dot"></span> CENTRAL UNIFICADA</span>
+            <span class="af-stage-status">IA + HUMANO</span>
+          </div>
+          <div class="af-mini-inbox">
+            <div class="af-mini-msg is-ai">
+              <strong>Bina AI</strong>
+              <span>Triagem concluída · Intenção comercial validada</span>
+            </div>
+            <div class="af-mini-msg is-lead">
+              <strong>Samuel · SDR</strong>
+              <span>Dossiê pronto no pipeline para fechamento</span>
+            </div>
+            <div class="af-mini-handoff">
+              <span class="dot"></span> Assumir conversa com 1 clique
+            </div>
+          </div>
+        </div>
+        <div class="af-card-body">
+          <div class="af-card-meta">
+            <span class="glass-icon"><i data-icon="messages"></i></span>
+            <span class="card-number">02 / OPERAÇÃO HÍBRIDA</span>
+          </div>
+          <h3>Central com contexto</h3>
+          <p>Caixa de entrada unificada que aproxima os agentes de IA e sua equipe humana sem perder o histórico.</p>
+          <span class="card-link">Abrir suíte interativa <i data-icon="arrow"></i></span>
+        </div>
       </a>
 
-      <a class="solution-card glow-card" href="#sites">
-        <img class="solution-image" src="assets/commerce.webp" width="1200" height="675" alt="Sites comerciais e portais institucionais" loading="lazy">
-        <span class="glass-icon"><i data-icon="browser"></i></span>
-        <span class="card-number">03 / PRESENÇA &amp; PORTAIS</span>
-        <h3>Sites e portais com identidade</h3>
-        <p>Landing pages comerciais de alta conversão, portais institucionais e sistemas web sob medida.</p>
-        <span class="card-link">Conhecer desenvolvimento <i data-icon="arrow"></i></span>
+      <!-- Card 03: Sites e Portais com Identidade (1:1 Interactive Liquid Glass Showcase) -->
+      <a class="solution-card glow-card af-interactive-card" href="#sites">
+        <div class="af-card-stage stage-sites" aria-hidden="true">
+          <div class="af-stage-topbar">
+            <span class="af-stage-pill"><span class="dot"></span> WEB &amp; PORTAIS</span>
+            <span class="af-stage-status">ALTA CONVERSÃO</span>
+          </div>
+          <div class="af-mini-browser">
+            <div class="af-browser-dots"><i></i><i></i><i></i><span>atendefranca.com.br</span></div>
+            <div class="af-browser-canvas">
+              <div class="af-browser-hero-mock">
+                <small>PRESENÇA PREMIUM</small>
+                <strong>Design Autoral &amp; IA Nativa</strong>
+                <span class="af-mock-cta">Atendimento Ao Vivo ↗</span>
+              </div>
+              <div class="af-browser-metrics">
+                <span>Comercial</span>
+                <span>Institucional</span>
+                <span>Gov WCAG</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="af-card-body">
+          <div class="af-card-meta">
+            <span class="glass-icon"><i data-icon="browser"></i></span>
+            <span class="card-number">03 / PRESENÇA &amp; PORTAIS</span>
+          </div>
+          <h3>Sites e portais com identidade</h3>
+          <p>Landing pages comerciais de alta conversão, portais institucionais e sistemas web sob medida.</p>
+          <span class="card-link">Conhecer desenvolvimento <i data-icon="arrow"></i></span>
+        </div>
       </a>
 
-      <a class="solution-card glow-card" href="#conexoes">
-        <img class="solution-image" src="assets/integration-reference.webp" width="1200" height="675" alt="Hub de integrações Atende Franca" loading="lazy">
-        <span class="glass-icon"><i data-icon="workflow"></i></span>
-        <span class="card-number">04 / INTEGRAÇÕES &amp; RAG</span>
-        <h3>Sistemas que conversam</h3>
-        <p>Base de conhecimento verificada e automações desenhadas conforme a infraestrutura do seu projeto.</p>
-        <span class="card-link">Explorar arquitetura <i data-icon="arrow"></i></span>
+      <!-- Card 04: Sistemas que Conversam — 3x3 Interactive Logo Matrix from Repass-Ai card1.txt -->
+      <a class="solution-card glow-card af-interactive-card" href="#conexoes">
+        <div class="af-card-stage stage-hub" aria-hidden="true">
+          <div class="af-stage-topbar">
+            <span class="af-stage-pill"><span class="dot"></span> HUB &amp; APIs</span>
+            <span class="af-stage-status">ECOSSISTEMA</span>
+          </div>
+          <div class="af-logos-matrix">
+            <span class="af-logo-tile" title="WhatsApp & Mensagens"><i data-icon="messages"></i></span>
+            <span class="af-logo-tile" title="Voz Natural"><i data-icon="mic"></i></span>
+            <span class="af-logo-tile" title="Base Oficial RAG"><i data-icon="database"></i></span>
+            <span class="af-logo-tile" title="Agenda Luma"><i data-icon="calendar"></i></span>
+            <span class="af-logo-tile is-core" title="Atende Franca Core"><i data-icon="workflow"></i></span>
+            <span class="af-logo-tile" title="Pipeline Samuel"><i data-icon="chart"></i></span>
+            <span class="af-logo-tile" title="Portais & Web"><i data-icon="browser"></i></span>
+            <span class="af-logo-tile" title="Gov & Ouvidoria"><i data-icon="gov"></i></span>
+            <span class="af-logo-tile" title="Segurança & LGPD"><i data-icon="shield"></i></span>
+          </div>
+        </div>
+        <div class="af-card-body">
+          <div class="af-card-meta">
+            <span class="glass-icon"><i data-icon="workflow"></i></span>
+            <span class="card-number">04 / INTEGRAÇÕES &amp; RAG</span>
+          </div>
+          <h3>Sistemas que conversam</h3>
+          <p>Base de conhecimento verificada e automações desenhadas conforme a infraestrutura do seu projeto.</p>
+          <span class="card-link">Explorar arquitetura <i data-icon="arrow"></i></span>
+        </div>
       </a>
     </div>
   </section>
 
-  <!-- SEÇÃO 2 DA DOCUMENTAÇÃO MESTRA: JORNADA INTERATIVA EM 4 CAPÍTULOS -->
-  <section class="journey-scrolly-section section" id="jornada" aria-labelledby="journey-title">
+  <!-- SEÇÃO 2 DA DOCUMENTAÇÃO MESTRA: JORNADA INTERATIVA EM 4 CAPÍTULOS (CAMADA CLARA NO TOPO + VELARIS SUAVE AO FUNDO) -->
+  <section class="journey-scrolly-section section" id="jornada" aria-labelledby="journey-title" data-velaris-section data-velaris-bg="#000000" data-velaris-colors="#86efac,#4ade80,#059669,#000000" data-velaris-speed="1.6" data-velaris-grain="0.25">
+    <div class="journey-frosted-veil" aria-hidden="true"></div>
     <div class="wrap">
       <div class="section-heading">
         <div>
@@ -705,8 +795,8 @@
     </div>
   </section>
 
-  <!-- BINA VOICE — EXPERIÊNCIA 3D NO SMARTPHONE & OCCLUSION CHOREOGRAPHY -->
-  <section class="voice-section" id="bina-voice">
+  <!-- BINA VOICE — EXPERIÊNCIA 3D NO SMARTPHONE COM BACKGROUND VELARIS WEBGL (21ST.DEV) -->
+  <section class="voice-section" id="bina-voice" data-velaris-section data-velaris-bg="#000000" data-velaris-colors="#86efac,#4ade80,#059669,#000000" data-velaris-speed="2.0" data-velaris-grain="0.3">
     <div class="wrap voice-layout section">
       <div class="voice-story">
         <div class="eyebrow"><span class="dot"></span> BINA VOICE / PRESENÇA QUE SE OUVE</div>
