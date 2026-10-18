@@ -1,0 +1,44 @@
+{
+  "project": "Atende Franca",
+  "stage": "frontend-v1",
+  "framework": "Static HTML/CSS/JavaScript with locally vendored GSAP 3.15.0 and ScrollTrigger",
+  "tokens": {
+    "background": "#F7F3EB",
+    "surface": "#FFFCF7",
+    "foreground": "#18272B",
+    "primary": "#1DDD63",
+    "terracotta": "#B65F43",
+    "primaryForeground": "#102A18",
+    "greenText": "#116B30"
+  },
+  "constraints": [
+    "Use 21st for individual UI primitives, never generate a complete page or hero",
+    "Preserve approved ceramic mascot and human character identities",
+    "PNG motion must not be presented as a freely rotating 3D model",
+    "Respect reduced motion and maintain useful static fallback",
+    "Franca positioning; no invented customer or hospital affiliations"
+  ],
+  "decisions": [
+    {
+      "date": "2026-10-18",
+      "decision": "User chose vivid neon green inspired by atendeeai.com; sampled CTA rgb(29,221,99). Use dark foreground on neon controls and green ink for small text."
+    },
+    {
+      "date": "2026-10-18",
+      "decision": "User authorized first complete version using local reference collection, original SVG icons and a richer vector brand mark. Implementation in site/, preserving preview/."
+    }
+  ],
+  "provisionalDirection": "Warm ceramic base with vivid neon green accents, architectural depth and restrained layered motion",
+  "catalog": [
+    {
+      "id": 26725,
+      "name": "Magnetic Button",
+      "status": "DOM interaction adapted in prototype"
+    },
+    {
+      "id": 808,
+      "name": "Navigation Menu",
+      "status": "retrieved for future React integration"
+    }
+  ]
+}

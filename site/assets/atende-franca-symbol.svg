@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <title>Atende Franca — conversa e conexão</title>
+  <rect x="1" y="1" width="78" height="78" rx="23" fill="#1DDD63"/>
+  <g stroke="#102A18" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26 18h28a13 13 0 0 1 13 13v15a13 13 0 0 1-13 13H41L25 70V59a13 13 0 0 1-13-13V31a13 13 0 0 1 14-13Z"/>
+    <path d="M23 39h8l6-12 9 25 6-13h7"/>
+  </g>
+</svg>

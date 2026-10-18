@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <title>Atende Franca — IA, Voz, Sites e Sistemas para Empresas, Instituições e Órgãos Públicos</title>
+  <meta name="description" content="Atendimento inteligente com IA por voz e mensagens, criação de sites, portais institucionais e sistemas sob medida para empresas e órgãos públicos. Conheça Bina, Samuel e Luma.">
+  <link rel="icon" href="assets/atende-franca-symbol.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="version-one.css">
+  <link rel="stylesheet" href="commercial.css">
+  <link rel="stylesheet" href="navigation.css">
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="enhancements.js"></script>
+  <script defer src="navigation.js"></script>
+  <script defer src="applications.js"></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- STICKY LIQUID GLASS HEADER & MEGA MENUS -->
+<div class="site-header-shell">
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#" aria-label="Atende Franca, início">
+      <span class="brand-icon" aria-hidden="true"></span>
+      <span class="brand-text">atende<span class="brand-city">franca</span></span>
+    </a>
+
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="menu-bars" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+
+    <nav class="nav-root" id="primary-navigation" aria-label="Navegação principal">
+      <!-- 1. PRODUTOS: Canais / Aplicativos / APIs -->
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-produtos">
+          Produtos <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="mega-panel" id="menu-produtos" hidden>
+          <div class="mega-inner">
+            <div class="mega-columns">
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="prod-canais">Canais</button></h3>
+                <div class="category-content" id="prod-canais">
+                  <a href="#bina-voice" data-preview-img="assets/robot-phone.webp" data-preview-tag="CANAL DE VOZ · BINA VOICE" data-preview-title="Bina Voice no Atendimento" data-preview-desc="Recepção por voz natural com compreensão de contexto, triagem e encaminhamento estruturado.">
+                    <i data-icon="wave"></i>
+                    <span><strong>Bina Voice <em class="mega-badge">Demo</em></strong><small>Recepção e orientação por voz com linguagem natural.</small></span>
+                  </a>
+                  <a href="#central" data-preview-img="assets/chat-reference.webp" data-preview-tag="MENSAGENS & WEBCHAT" data-preview-title="Atendimento em Mensagens e Site" data-preview-desc="Conversas com contexto em canais digitais como WhatsApp e chat institucional, conforme escopo.">
+                    <i data-icon="messages"></i>
+                    <span><strong>Mensagens & Webchat</strong><small>Recepção contínua no site e canais de mensagem.</small></span>
+                  </a>
+                  <a href="#setores-governo" data-preview-img="assets/knowledge.webp" data-preview-tag="PORTAIS & OUVIDORIA" data-preview-title="Canal Cidadão & Institucional" data-preview-desc="Orientação pública e institucional baseada exclusivamente em documentos oficiais aprovados.">
+                    <i data-icon="gov"></i>
+                    <span><strong>Portal & Atendimento Cidadão <em class="mega-badge gov">Gov</em></strong><small>Triagem e orientação para instituições e órgãos públicos.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="prod-aplicativos">Aplicativos</button></h3>
+                <div class="category-content" id="prod-aplicativos">
+                  <a href="#central" data-preview-img="assets/inbox.webp" data-preview-tag="APLICAÇÃO · CENTRAL" data-preview-title="Central de Atendimento com IA" data-preview-desc="Caixa de entrada unificada com resumo de contexto, temperatura de oportunidade e intervenção humana.">
+                    <i data-icon="layers"></i>
+                    <span><strong>Central de Operação</strong><small>Caixa de entrada com IA e transferência para humanos.</small></span>
+                  </a>
+                  <a href="#sites" data-preview-img="assets/commerce.webp" data-preview-tag="PRESENÇA DIGITAL" data-preview-title="Sites, Portais e Landing Pages" data-preview-desc="Desenvolvimento de sites comerciais de alta conversão, portais institucionais e sistemas web.">
+                    <i data-icon="browser"></i>
+                    <span><strong>Sites & Sistemas Web</strong><small>Landing pages comerciais, portais e aplicações sob medida.</small></span>
+                  </a>
+                  <a href="#aplicacoes" data-preview-img="assets/agenda-reference.webp" data-preview-tag="ROTINA & AGENDA" data-preview-title="Gestão de Agenda & Qualificação" data-preview-desc="Jornadas guiadas de consulta de horários com a Luma e pipeline comercial com o Samuel.">
+                    <i data-icon="calendar"></i>
+                    <span><strong>Painel de Agenda & Pipeline</strong><small>Organização de horários e oportunidades comerciais.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="prod-apis">APIs</button></h3>
+                <div class="category-content" id="prod-apis">
+                  <a href="#conexoes" data-preview-img="assets/integration-reference.webp" data-preview-tag="CONECTIVIDADE · HUB" data-preview-title="Integrações via API e Webhooks" data-preview-desc="Conexão sob medida entre o atendimento com IA e os sistemas, CRMs ou protocolos da sua organização.">
+                    <i data-icon="workflow"></i>
+                    <span><strong>Conector de Sistemas & CRM</strong><small>Integração via API validada conforme o ambiente do cliente.</small></span>
+                  </a>
+                  <a href="#conhecimento" data-preview-img="assets/knowledge.webp" data-preview-tag="BASE DOCUMENTAL · RAG" data-preview-title="Indexação de Base de Conhecimento" data-preview-desc="Organização de catálogos, manuais, regimentos e portarias para consulta segura pelos agentes.">
+                    <i data-icon="database"></i>
+                    <span><strong>Motor de Conhecimento (RAG)</strong><small>Consulta estruturada às fontes aprovadas pela organização.</small></span>
+                  </a>
+                  <a href="#central" data-preview-img="assets/agent-flow.webp" data-preview-tag="ORQUESTRAÇÃO" data-preview-title="Fluxos e Automações de Rotina" data-preview-desc="Regras de negócio auditáveis para acionar agendamentos, cadastros e notificações de equipe.">
+                    <i data-icon="code"></i>
+                    <span><strong>Webhooks & Automações</strong><small>Gatilhos operacionais definidos no escopo técnico.</small></span>
+                  </a>
+                </div>
+              </section>
+            </div>
+
+            <aside class="mega-showcase" aria-label="Destaque de produto">
+              <div>
+                <div class="mega-showcase-media">
+                  <img src="assets/hero-premium-reference.webp" width="600" height="360" alt="Ecossistema Atende Franca" loading="lazy">
+                </div>
+                <span class="mega-showcase-tag"><span class="dot"></span> <span>ECOSSISTEMA ATENDE FRANCA</span></span>
+                <h4>Canais, Aplicações e Integrações</h4>
+                <p>Demonstrações identificadas com transparência. Integrações e canais são ativados conforme o escopo do seu projeto.</p>
+              </div>
+              <a class="mega-showcase-cta" href="#central">Explorar suíte interativa <i data-icon="arrow"></i></a>
+            </aside>
+          </div>
+          <div class="mega-footer-bar">
+            <span class="mega-footer-note"><span class="dot"></span> Serviços autênticos da Atende Franca · Sem integrações fictícias</span>
+            <div class="mega-footer-links">
+              <a href="#jornada">Ver jornada em 4 etapas <i data-icon="arrow"></i></a>
+              <a href="#central">Ver matriz de canais <i data-icon="arrow"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SOLUÇÕES: Comercial & Vendas / Institucional / Órgãos do Governo -->
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-solucoes">
+          Soluções <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="mega-panel" id="menu-solucoes" hidden>
+          <div class="mega-inner">
+            <div class="mega-columns">
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="sol-comercial">Comercial &amp; Vendas</button></h3>
+                <div class="category-content" id="sol-comercial">
+                  <a href="#setores-governo" data-preview-img="assets/samuel-reference.webp" data-preview-tag="ALTA CONVERSÃO COMERCIAL" data-preview-title="Qualificação de Oportunidades 24/7" data-preview-desc="Receba leads em segundos, identifique interesse real com o Samuel e entregue oportunidades prontas para fechamento.">
+                    <i data-icon="chart"></i>
+                    <span><strong>Qualificação Comercial (SDR)</strong><small>Triagem de contatos e organização de pipeline com Samuel.</small></span>
+                  </a>
+                  <a href="#sites" data-preview-img="assets/commerce.webp" data-preview-tag="LANDING PAGES & E-COMMERCE" data-preview-title="Páginas de Conversão com IA" data-preview-desc="Design autoral aliado a atendimento interativo para transformar visitantes em clientes.">
+                    <i data-icon="spark"></i>
+                    <span><strong>Landing Pages de Conversão</strong><small>Páginas rápidas com recepção ativa da Bina.</small></span>
+                  </a>
+                  <a href="#aplicacoes" data-preview-img="assets/agenda-reference.webp" data-preview-tag="AGENDAMENTO COMERCIAL" data-preview-title="Jornadas de Reserva e Consulta" data-preview-desc="Reduza o tempo entre a primeira dúvida e o agendamento confirmado com apoio da Luma.">
+                    <i data-icon="calendar"></i>
+                    <span><strong>Agendamento &amp; Retenção</strong><small>Confirmação de horários e acompanhamento de rotina.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="sol-institucional">Institucional &amp; Corporativo</button></h3>
+                <div class="category-content" id="sol-institucional">
+                  <a href="#setores-governo" data-preview-img="assets/office.webp" data-preview-tag="PRESENÇA INSTITUCIONAL" data-preview-title="Portais Corporativos com Identidade" data-preview-desc="Arquitetura de informação clara, design sofisticado e canais de relacionamento integrados.">
+                    <i data-icon="building"></i>
+                    <span><strong>Portais Institucionais</strong><small>Presença sólida para empresas, associações e entidades.</small></span>
+                  </a>
+                  <a href="#conhecimento" data-preview-img="assets/knowledge.webp" data-preview-tag="GOVERNANÇA DA INFORMAÇÃO" data-preview-title="Central de Dúvidas e Normas (RAG)" data-preview-desc="Respostas consistentes baseadas em manuais, regulamentos e comunicados oficiais.">
+                    <i data-icon="files"></i>
+                    <span><strong>Base Documental Verificada</strong><small>Respostas alinhadas às diretrizes da instituição.</small></span>
+                  </a>
+                  <a href="#central" data-preview-img="assets/agent-flow.webp" data-preview-tag="ATENDIMENTO HÍBRIDO" data-preview-title="Recepção Digital + Equipe Humana" data-preview-desc="A IA organiza a triagem inicial e encaminha casos sensíveis para o setor responsável.">
+                    <i data-icon="handoff"></i>
+                    <span><strong>Encaminhamento entre Setores</strong><small>Transição suave com histórico preservado.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="sol-governo">Órgãos do Governo</button></h3>
+                <div class="category-content" id="sol-governo">
+                  <a href="#setores-governo" data-preview-img="assets/people-reference.webp" data-preview-tag="SETOR PÚBLICO · CIDADÃO" data-preview-title="Atendimento ao Cidadão & Ouvidoria" data-preview-desc="Orientação clara sobre serviços públicos, documentos necessários, prazos e abertura de demandas.">
+                    <i data-icon="gov"></i>
+                    <span><strong>Atendimento ao Cidadão <em class="mega-badge gov">Gov</em></strong><small>Orientação 24h sobre serviços, documentos e protocolos.</small></span>
+                  </a>
+                  <a href="#setores-governo" data-preview-img="assets/knowledge.webp" data-preview-tag="TRANSPARÊNCIA & LGPD" data-preview-title="Governança, Acessibilidade e LGPD" data-preview-desc="Conformidade com padrões de acessibilidade (WCAG AA), identificação clara de IA e trilha auditável.">
+                    <i data-icon="shield"></i>
+                    <span><strong>Transparência, WCAG &amp; LGPD</strong><small>Arquitetura preparada para exigências de órgãos públicos.</small></span>
+                  </a>
+                  <a href="#como-funciona" data-preview-img="assets/integration-reference.webp" data-preview-tag="IMPLANTAÇÃO PÚBLICA" data-preview-title="Projetos para Secretarias e Autarquias" data-preview-desc="Modelagem técnica por etapas com escopo documentado para contratações institucionais e públicas.">
+                    <i data-icon="layers"></i>
+                    <span><strong>Secretarias, Câmaras e Autarquias</strong><small>Desenho técnico aderente ao rito de cada órgão.</small></span>
+                  </a>
+                </div>
+              </section>
+            </div>
+
+            <aside class="mega-showcase" aria-label="Destaque de solução">
+              <div>
+                <div class="mega-showcase-media">
+                  <img src="assets/people-reference.webp" width="600" height="360" alt="Pessoas no centro, IA ao seu lado" loading="lazy">
+                </div>
+                <span class="mega-showcase-tag"><span class="dot"></span> <span>COMERCIAL · INSTITUCIONAL · GOV</span></span>
+                <h4>Tecnologia para Empresas e Setor Público</h4>
+                <p>Da conversão comercial rápida ao atendimento ao cidadão com transparência, acessibilidade e base documental auditável.</p>
+              </div>
+              <a class="mega-showcase-cta" href="#setores-governo">Comparar aplicações por setor <i data-icon="arrow"></i></a>
+            </aside>
+          </div>
+          <div class="mega-footer-bar">
+            <span class="mega-footer-note"><span class="dot"></span> Pessoas no centro. IA ao seu lado — em empresas privadas e órgãos públicos</span>
+            <div class="mega-footer-links">
+              <a href="#setores-governo">Ver diretrizes para Órgãos Públicos <i data-icon="arrow"></i></a>
+              <a href="#conversa">Solicitar diagnóstico técnico <i data-icon="arrow"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. AGENTES DE IA: Por função / Por indústria / Especializados -->
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-agentes">
+          Agentes de IA <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="mega-panel" id="menu-agentes" hidden>
+          <div class="mega-inner">
+            <div class="mega-columns">
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="agt-funcao">Por função</button></h3>
+                <div class="category-content" id="agt-funcao">
+                  <a href="#equipe" data-preview-img="assets/portrait.webp" data-preview-tag="01 · RECEPÇÃO & VOZ" data-preview-title="Bina · Recepção, Triagem e Voz" data-preview-desc="Acolhe o visitante ou cidadão, compreende a necessidade com linguagem natural e aciona o fluxo adequado.">
+                    <img class="mega-avatar-thumb" src="assets/agent-bina.webp" width="72" height="72" alt="Bina" loading="lazy">
+                    <span><strong>Bina · Recepção e Voz <em class="mega-badge">Líder</em></strong><small>Primeiro contato, triagem inteligente e orientação.</small></span>
+                  </a>
+                  <a href="#equipe" data-preview-img="assets/samuel-reference.webp" data-preview-tag="02 · COMERCIAL & PIPELINE" data-preview-title="Samuel · Qualificação Comercial" data-preview-desc="Estrutura informações de interesse, classifica oportunidades e prepara o contexto para o time de vendas.">
+                    <img class="mega-avatar-thumb" src="assets/agent-samuel.webp" width="72" height="72" alt="Samuel" loading="lazy">
+                    <span><strong>Samuel · Comercial &amp; SDR</strong><small>Qualificação de leads e organização de oportunidades.</small></span>
+                  </a>
+                  <a href="#equipe" data-preview-img="assets/agenda-reference.webp" data-preview-tag="03 · SUPORTE & AGENDA" data-preview-title="Luma · Agenda e Continuidade" data-preview-desc="Apoia dúvidas recorrentes, organiza disponibilidade de horários e acompanha os próximos passos.">
+                    <img class="mega-avatar-thumb" src="assets/agent-luma.webp" width="72" height="72" alt="Luma" loading="lazy">
+                    <span><strong>Luma · Suporte e Agenda</strong><small>Consulta de horários, confirmação e cuidado contínuo.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="agt-industria">Por indústria</button></h3>
+                <div class="category-content" id="agt-industria">
+                  <a href="#segmentos" data-preview-img="assets/luma-support.webp" data-preview-tag="SAÚDE & CLÍNICAS" data-preview-title="Saúde, Clínicas e Bem-estar" data-preview-desc="Recepção administrativa, orientação de preparo e jornadas de agendamento sem aconselhamento clínico.">
+                    <i data-icon="shield"></i>
+                    <span><strong>Saúde e Cuidado</strong><small>Recepção administrativa e jornadas de agendamento.</small></span>
+                  </a>
+                  <a href="#segmentos" data-preview-img="assets/mobile-commerce.webp" data-preview-tag="COMÉRCIO & SERVIÇOS" data-preview-title="Varejo, Comércio e Serviços" data-preview-desc="Atendimento ágil sobre catálogo, prazos, orçamentos e encaminhamento direto para fechamento.">
+                    <i data-icon="browser"></i>
+                    <span><strong>Comércio e Serviços</strong><small>Qualificação de pedidos, dúvidas e conversão comercial.</small></span>
+                  </a>
+                  <a href="#setores-governo" data-preview-img="assets/team-reference.webp" data-preview-tag="SETOR PÚBLICO & INSTITUIÇÕES" data-preview-title="Órgãos Públicos e Instituições" data-preview-desc="Triagem cidadã, consulta a serviços oficiais e direcionamento para ouvidorias e secretarias.">
+                    <i data-icon="gov"></i>
+                    <span><strong>Setor Público &amp; Institucional <em class="mega-badge gov">Gov</em></strong><small>Atendimento ao cidadão e orientação normativa.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="agt-especializados">Especializados</button></h3>
+                <div class="category-content" id="agt-especializados">
+                  <a href="#bina-voice" data-preview-img="assets/robot-phone.webp" data-preview-tag="ESPECIALISTA DE VOZ" data-preview-title="Bina AI Voice · Presença Sonora" data-preview-desc="Interação guiada por voz com respostas claras e transição imediata para canais visuais.">
+                    <i data-icon="wave"></i>
+                    <span><strong>Agente de Voz (Bina Voice)</strong><small>Demonstração interativa de recepção falada.</small></span>
+                  </a>
+                  <a href="#conhecimento" data-preview-img="assets/knowledge.webp" data-preview-tag="ESPECIALISTA DOCUMENTAL" data-preview-title="Agente de Base de Conhecimento" data-preview-desc="Treinado para responder apenas com base em documentos, manuais e portarias homologadas.">
+                    <i data-icon="files"></i>
+                    <span><strong>Especialista Documental (RAG)</strong><small>Fidelidade estrita às fontes oficiais do cliente.</small></span>
+                  </a>
+                  <a href="#central" data-preview-img="assets/agent-flow.webp" data-preview-tag="ORQUESTRAÇÃO MULTIAGENTE" data-preview-title="Fluxo Integrado Bina + Samuel + Luma" data-preview-desc="Coordenação entre recepção, qualificação e agenda com supervisão da sua equipe.">
+                    <i data-icon="workflow"></i>
+                    <span><strong>Orquestração Multiagente</strong><small>Passagem de bastão fluida entre IA e humanos.</small></span>
+                  </a>
+                </div>
+              </section>
+            </div>
+
+            <aside class="mega-showcase" aria-label="Destaque da equipe de agentes">
+              <div>
+                <div class="mega-showcase-media">
+                  <img src="assets/team-reference.webp" width="600" height="360" alt="Bina, Samuel e Luma juntos" loading="lazy">
+                </div>
+                <span class="mega-showcase-tag"><span class="dot"></span> <span>EQUIPE DE AGENTES ATENDE FRANCA</span></span>
+                <h4>Bina, Samuel e Luma em Sintonia</h4>
+                <p>Três identidades com papéis claros para receber, qualificar e agendar — sempre sob supervisão da sua equipe.</p>
+              </div>
+              <a class="mega-showcase-cta" href="#equipe">Conhecer os 3 agentes em detalhes <i data-icon="arrow"></i></a>
+            </aside>
+          </div>
+          <div class="mega-footer-bar">
+            <span class="mega-footer-note"><span class="dot"></span> Papéis claros e auditáveis · Supervisão humana a qualquer momento</span>
+            <div class="mega-footer-links">
+              <a href="#equipe">Ver galeria de agentes <i data-icon="arrow"></i></a>
+              <a href="#bina-voice">Testar Bina Voice <i data-icon="arrow"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. EMPRESA: Atende Franca / Como trabalhamos / Governança -->
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-empresa">
+          Empresa <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="mega-panel" id="menu-empresa" hidden>
+          <div class="mega-inner">
+            <div class="mega-columns">
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="emp-marca">Atende Franca</button></h3>
+                <div class="category-content" id="emp-marca">
+                  <a href="#sobre" data-preview-img="assets/botanical.webp" data-preview-tag="ORIGEM & PROPÓSITO" data-preview-title="Feita em Franca · SP" data-preview-desc="Tecnologia próxima de verdade, criada para aproximar empresas, instituições e cidadãos.">
+                    <i data-icon="pin"></i>
+                    <span><strong>Nossa Identidade em Franca</strong><small>Tecnologia próxima, humana e com direção autoral.</small></span>
+                  </a>
+                  <a href="#equipe" data-preview-img="assets/people-reference.webp" data-preview-tag="VISÃO DE PRODUTO" data-preview-title="Pessoas no Centro, IA ao seu Lado" data-preview-desc="A inteligência artificial organiza a rotina para que as pessoas dediquem tempo ao que importa.">
+                    <i data-icon="people"></i>
+                    <span><strong>Filosofia de Atendimento</strong><small>IA como apoio real à equipe humana, nunca substituição cega.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="emp-metodo">Como trabalhamos</button></h3>
+                <div class="category-content" id="emp-metodo">
+                  <a href="#como-funciona" data-preview-img="assets/office.webp" data-preview-tag="METODOLOGIA EM ETAPAS" data-preview-title="Escutar, Desenhar, Construir e Acompanhar" data-preview-desc="Cada implantação parte da rotina real da organização, com validação antes da entrada no ar.">
+                    <i data-icon="layers"></i>
+                    <span><strong>Processo de Implantação</strong><small>Quatro etapas claras do diagnóstico ao acompanhamento.</small></span>
+                  </a>
+                  <a href="#duvidas" data-preview-img="assets/chat-reference.webp" data-preview-tag="TRANSPARÊNCIA" data-preview-title="Perguntas Frequentes & Escopo" data-preview-desc="Esclarecimentos diretos sobre demonstrações, prazos, integrações e operação assistida.">
+                    <i data-icon="info"></i>
+                    <span><strong>Perguntas Frequentes (FAQ)</strong><small>Respostas transparentes sobre como contratamos e operamos.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="emp-gov">Ética &amp; Governança</button></h3>
+                <div class="category-content" id="emp-gov">
+                  <a href="#central" data-preview-img="assets/knowledge.webp" data-preview-tag="COMPROMISSO DE HONESTIDADE" data-preview-title="Demonstrações Identificadas" data-preview-desc="Sem números inventados ou promessas vagas: você sabe exatamente o que é simulação e o que entra no projeto.">
+                    <i data-icon="shield"></i>
+                    <span><strong>Transparência Técnica</strong><small>Separação rigorosa entre demonstração e ambiente produtivo.</small></span>
+                  </a>
+                  <a href="#conversa" data-preview-img="assets/welcome.webp" data-preview-tag="CONTATO DIRETO" data-preview-title="Converse com Nossa Equipe" data-preview-desc="Prepare seu briefing em minutos e receba um direcionamento consultivo para sua necessidade.">
+                    <i data-icon="messages"></i>
+                    <span><strong>Iniciar Diagnóstico</strong><small>Vamos ouvir sua necessidade comercial ou institucional.</small></span>
+                  </a>
+                </div>
+              </section>
+            </div>
+
+            <aside class="mega-showcase" aria-label="Destaque institucional">
+              <div>
+                <div class="mega-showcase-media">
+                  <img src="assets/office.webp" width="600" height="360" alt="Escritório biophílico Atende Franca" loading="lazy">
+                </div>
+                <span class="mega-showcase-tag"><span class="dot"></span> <span>FRANCA · SÃO PAULO · BRASIL</span></span>
+                <h4>Proximidade e Rigor Técnico</h4>
+                <p>Projetos desenhados lado a lado com sua equipe, respeitando a identidade e as regras do seu segmento.</p>
+              </div>
+              <a class="mega-showcase-cta" href="#sobre">Conhecer nossa história <i data-icon="arrow"></i></a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. PLANOS: Modelos / Por frente / Setor Público & Institucional -->
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-planos">
+          Planos <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="mega-panel" id="menu-planos" hidden>
+          <div class="mega-inner">
+            <div class="mega-columns">
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="pln-modelos">Modelos de Escopo</button></h3>
+                <div class="category-content" id="pln-modelos">
+                  <a href="#oferta" data-preview-img="assets/commerce.webp" data-preview-tag="FRENTE 01 · PRESENÇA" data-preview-title="Site ou Portal com Identidade" data-preview-desc="Desenvolvimento de landing page comercial ou portal institucional responsivo, rápido e acessível.">
+                    <i data-icon="browser"></i>
+                    <span><strong>Presença Digital Sob Medida</strong><small>Sites institucionais, landing pages e sistemas web.</small></span>
+                  </a>
+                  <a href="#oferta" data-preview-img="assets/portrait.webp" data-preview-tag="FRENTE 02 · ATENDIMENTO IA" data-preview-title="Implantação de Agentes de IA" data-preview-desc="Configuração da Bina, Samuel e Luma com a base de conhecimento e regras da sua operação.">
+                    <i data-icon="mic"></i>
+                    <span><strong>Atendimento Inteligente (IA)</strong><small>Recepção, triagem, qualificação e agenda assistida.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="pln-ecossistema">Ecossistema Completo</button></h3>
+                <div class="category-content" id="pln-ecossistema">
+                  <a href="#oferta" data-preview-img="assets/integration-reference.webp" data-preview-tag="FRENTE 03 · INTEGRADO" data-preview-title="Site + Agentes + Integrações" data-preview-desc="Projeto completo unindo presença digital, central de atendimento e conexões com suas ferramentas.">
+                    <i data-icon="workflow"></i>
+                    <span><strong>Projeto Completo Integrado</strong><small>Presença web, agentes de IA e automações conectadas.</small></span>
+                  </a>
+                  <a href="#como-funciona" data-preview-img="assets/agent-flow.webp" data-preview-tag="EVOLUÇÃO CONTÍNUA" data-preview-title="Acompanhamento e Evolução" data-preview-desc="Revisão periódica da base de conhecimento, fluxos de conversa e indicadores combinados.">
+                    <i data-icon="chart"></i>
+                    <span><strong>Operação &amp; Acompanhamento</strong><small>Suporte consultivo e curadoria contínua do conhecimento.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="pln-publico">Institucional &amp; Governo</button></h3>
+                <div class="category-content" id="pln-publico">
+                  <a href="#setores-governo" data-preview-img="assets/knowledge.webp" data-preview-tag="CONTRATAÇÃO PÚBLICA & INSTITUCIONAL" data-preview-title="Projetos Técnicos Documentados" data-preview-desc="Dimensionamento técnico detalhado com memorial de escopo, arquitetura e requisitos de conformidade.">
+                    <i data-icon="gov"></i>
+                    <span><strong>Escopo Institucional &amp; Público <em class="mega-badge gov">Gov</em></strong><small>Propostas técnicas estruturadas conforme o rito do órgão.</small></span>
+                  </a>
+                  <a href="#conversa" data-preview-img="assets/welcome.webp" data-preview-tag="DIAGNÓSTICO GRATUITO" data-preview-title="Gerar Briefing para Orçamento" data-preview-desc="Preencha os objetivos da sua empresa ou instituição para receber uma proposta dimensionada.">
+                    <i data-icon="spark"></i>
+                    <span><strong>Simular Escopo e Proposta</strong><small>Valores definidos com transparência após diagnóstico.</small></span>
+                  </a>
+                </div>
+              </section>
+            </div>
+
+            <aside class="mega-showcase" aria-label="Destaque de planos">
+              <div>
+                <div class="mega-showcase-media">
+                  <img src="assets/welcome.webp" width="600" height="360" alt="Bina convida ao próximo passo" loading="lazy">
+                </div>
+                <span class="mega-showcase-tag"><span class="dot"></span> <span>PROPOSTA CONSULTIVA</span></span>
+                <h4>Dimensionado para a sua Realidade</h4>
+                <p>Não empurramos pacotes genéricos: desenhamos o escopo exato que sua empresa ou instituição precisa operar.</p>
+              </div>
+              <a class="mega-showcase-cta" href="#oferta">Entender modelos de proposta <i data-icon="arrow"></i></a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. PARCEIROS: Ecossistema / Modelos / Iniciar conversa -->
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="menu-parceiros">
+          Parceiros <span class="nav-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="mega-panel" id="menu-parceiros" hidden>
+          <div class="mega-inner">
+            <div class="mega-columns">
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="parc-eco">Ecossistema</button></h3>
+                <div class="category-content" id="parc-eco">
+                  <a href="#parcerias" data-preview-img="assets/integration-reference.webp" data-preview-tag="PARCERIAS TÉCNICAS" data-preview-title="Software Houses e Consultorias" data-preview-desc="Combine nossas soluções de IA, voz e interface com o ERP, CRM ou sistema vertical da sua empresa.">
+                    <i data-icon="code"></i>
+                    <span><strong>Integradores e Tecnologia</strong><small>Projetos conjuntos com provedores de software e TI.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="parc-agencias">Agências &amp; Negócios</button></h3>
+                <div class="category-content" id="parc-agencias">
+                  <a href="#parcerias" data-preview-img="assets/commerce.webp" data-preview-tag="PARCERIAS COMERCIAIS" data-preview-title="Agências, Assessorias e Associações" data-preview-desc="Leve atendimento inteligente e presença digital premium para a carteira de clientes ou associados.">
+                    <i data-icon="people"></i>
+                    <span><strong>Agências e Entidades de Classe</strong><small>Atuação colaborativa para acelerar negócios regionais.</small></span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mega-group">
+                <h3><button class="category-toggle" type="button" aria-expanded="true" aria-controls="parc-contato">Construir em Conjunto</button></h3>
+                <div class="category-content" id="parc-contato">
+                  <a href="#conversa" data-preview-img="assets/people-reference.webp" data-preview-tag="NOVAS PARCERIAS" data-preview-title="Apresente sua Proposta" data-preview-desc="Nenhuma organização é listada como parceira sem autorização formal. Converse conosco para criar em conjunto.">
+                    <i data-icon="handoff"></i>
+                    <span><strong>Propor Parceria ou Co-criação</strong><small>Inicie uma conversa direta com nossa equipe.</small></span>
+                  </a>
+                </div>
+              </section>
+            </div>
+
+            <aside class="mega-showcase" aria-label="Destaque de parcerias">
+              <div>
+                <div class="mega-showcase-media">
+                  <img src="assets/integration-reference.webp" width="600" height="360" alt="Hub de conexões Atende Franca" loading="lazy">
+                </div>
+                <span class="mega-showcase-tag"><span class="dot"></span> <span>CO-CRIAÇÃO & ECOSSISTEMA</span></span>
+                <h4>Cresça Junto com a Atende Franca</h4>
+                <p>Unimos design de alta conversão, engenharia web e agentes de IA para projetos em parceria.</p>
+              </div>
+              <a class="mega-showcase-cta" href="#parcerias">Conversar sobre parceria <i data-icon="arrow"></i></a>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. CONTATO -->
+      <a class="nav-direct" href="#conversa">Contato</a>
+    </nav>
+
+    <a class="button header-cta specialist-cta magnetic" href="#conversa">
+      Falar com especialista <i data-icon="arrow"></i>
+    </a>
+  </header>
+</div>
+
+<main id="conteudo">
+  <!-- HERO SECTION: COMERCIAL + INSTITUCIONAL + ÓRGÃOS DO GOVERNO -->
+  <section class="hero commercial-hero" aria-labelledby="hero-title">
+    <div class="wrap commercial-layout">
+      <div class="hero-copy">
+        <!-- Audience Mode Switcher -->
+        <div class="hero-mode-switcher" role="group" aria-label="Selecionar perfil de aplicação">
+          <button type="button" class="hero-mode-btn" data-hero-mode="comercial" aria-pressed="true">Comercial &amp; Vendas</button>
+          <button type="button" class="hero-mode-btn" data-hero-mode="institucional" aria-pressed="false">Institucional</button>
+          <button type="button" class="hero-mode-btn" data-hero-mode="governo" aria-pressed="false">Órgãos do Governo</button>
+        </div>
+
+        <div class="eyebrow">
+          <span class="dot"></span>
+          <span id="hero-eyebrow-text">ALTA CONVERSÃO COMERCIAL · ATENDIMENTO &amp; VENDAS COM IA</span>
+        </div>
+
+        <h1 id="hero-title">Sua empresa atende.<br><em>Mesmo quando<br>você não pode.</em></h1>
+
+        <p class="intro" id="hero-intro">Transforme o primeiro contato em oportunidade qualificada com voz, chat e presença digital.</p>
+        <p class="description" id="hero-description">Bina recebe em segundos, Samuel organiza oportunidades no pipeline e Luma acompanha a agenda — conectados às informações aprovadas da sua empresa ou instituição.</p>
+
+        <div class="actions">
+          <a class="button primary magnetic" href="#bina-voice">
+            <i data-icon="wave"></i> Experimentar Bina Voice <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-link" href="#central">
+            Explorar aplicações ao vivo <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="commercial-channels">
+          <span><i data-icon="mic"></i> Voz Natural</span>
+          <span><i data-icon="messages"></i> Mensagens &amp; Chat</span>
+          <span><i data-icon="browser"></i> Sites &amp; Portais</span>
+          <span><i data-icon="gov"></i> Comercial &amp; Setor Público</span>
+        </div>
+
+        <div class="hero-footnote">
+          <i data-icon="pin"></i> De Franca (SP), com tecnologia autoral para empresas, instituições e órgãos públicos.
+        </div>
+      </div>
+
+      <!-- 2.5D / 3D STAGE + INTERACTIVE LIQUID GLASS VOICE & CHAT CONSOLE -->
+      <div class="human-stage">
+        <div class="human-backdrop" aria-hidden="true"></div>
+        <div class="human-glass" aria-hidden="true"></div>
+
+        <div class="human-portrait-pivot">
+          <img class="human-portrait" src="assets/human-hero.webp" width="933" height="1400" alt="Bina, assistente virtual da Atende Franca em ambiente acolhedor" fetchpriority="high">
+        </div>
+
+        <div class="human-nameplate">
+          <span class="human-wave" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></span>
+          <span>
+            <strong>Bina · Samuel · Luma</strong>
+            <small>Recepção, Comercial e Agenda integrados</small>
+          </span>
+          <a href="#equipe" aria-label="Conhecer a equipe de agentes"><i data-icon="arrow"></i></a>
+        </div>
+
+        <div class="human-caption">
+          <span class="dot"></span> INTELIGÊNCIA NO ATENDIMENTO.<br>GOVERNANÇA E PROXIMIDADE HUMANA.
+        </div>
+
+        <!-- Interactive Liquid Glass Voice & Chat Widget in Hero -->
+        <aside class="hero-glass-console" id="hero-console" aria-label="Simulador rápido da Bina no Hero">
+          <div class="console-top">
+            <span class="console-status"><span class="dot"></span> <span id="console-status-text">Bina Voice · Simulação Comercial</span></span>
+            <span class="console-badge">DEMO GUIADA</span>
+          </div>
+          <div class="console-wave-box">
+            <button type="button" class="console-mic-btn" id="console-mic-trigger" aria-pressed="false" aria-label="Ouvir simulação de voz da Bina">
+              <i data-icon="wave"></i>
+            </button>
+            <div class="console-bars" aria-hidden="true">
+              <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+            </div>
+          </div>
+          <p class="console-transcript" id="console-transcript" aria-live="polite">
+            “Olá! Sou a Bina. Posso apresentar nossos serviços, registrar seu interesse para o Samuel ou verificar horários com a Luma.”
+          </p>
+          <div class="console-quick-pills" role="group" aria-label="Exemplos rápidos de atendimento">
+            <button type="button" data-console-topic="comercial" aria-pressed="true">Comercial</button>
+            <button type="button" data-console-topic="institucional" aria-pressed="false">Institucional</button>
+            <button type="button" data-console-topic="governo" aria-pressed="false">Cidadão / Gov</button>
+            <button type="button" data-console-topic="agenda" aria-pressed="false">Agenda Luma</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="services-strip">
+    <div class="wrap">
+      <span>ATENDIMENTO POR VOZ &amp; CHAT</span><span aria-hidden="true">✳</span>
+      <span>ALTA CONVERSÃO COMERCIAL</span><span aria-hidden="true">✳</span>
+      <span>PORTAIS INSTITUCIONAIS &amp; GOV</span><span aria-hidden="true">✳</span>
+      <span>BASE DE CONHECIMENTO AUDITÁVEL</span>
+    </div>
+  </div>
+
+  <!-- ECOSSISTEMA DE SOLUÇÕES (LIQUID GLASS CARDS) -->
+  <section class="solutions-section wrap section" id="solucoes">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> UM ECOSSISTEMA COMPLETO, DO SEU JEITO</div>
+        <h2>Menos tarefas soltas.<br><em>Mais resultado e clareza.</em></h2>
+      </div>
+      <p>Atendimento inteligente, presença digital de autoridade e integração operacional na mesma arquitetura.</p>
+    </div>
+
+    <div class="solution-grid">
+      <a class="solution-card glow-card" href="#bina-voice">
+        <img class="solution-image" src="assets/voice.webp" width="1200" height="675" alt="Experiência de voz Bina Voice" loading="lazy">
+        <span class="glass-icon"><i data-icon="wave"></i></span>
+        <span class="card-number">01 / VOZ &amp; RECEPÇÃO</span>
+        <h3>Bina Voice</h3>
+        <p>Uma experiência natural para receber, tirar dúvidas, fazer triagem e encaminhar clientes ou cidadãos.</p>
+        <span class="card-link">Testar no smartphone <i data-icon="arrow"></i></span>
+      </a>
+
+      <a class="solution-card glow-card" href="#central">
+        <img class="solution-image" src="assets/inbox.webp" width="1200" height="675" alt="Central de atendimento com IA" loading="lazy">
+        <span class="glass-icon"><i data-icon="messages"></i></span>
+        <span class="card-number">02 / OPERAÇÃO HÍBRIDA</span>
+        <h3>Central com contexto</h3>
+        <p>Caixa de entrada unificada que aproxima os agentes de IA e sua equipe humana sem perder o histórico.</p>
+        <span class="card-link">Abrir suíte interativa <i data-icon="arrow"></i></span>
+      </a>
+
+      <a class="solution-card glow-card" href="#sites">
+        <img class="solution-image" src="assets/commerce.webp" width="1200" height="675" alt="Sites comerciais e portais institucionais" loading="lazy">
+        <span class="glass-icon"><i data-icon="browser"></i></span>
+        <span class="card-number">03 / PRESENÇA &amp; PORTAIS</span>
+        <h3>Sites e portais com identidade</h3>
+        <p>Landing pages comerciais de alta conversão, portais institucionais e sistemas web sob medida.</p>
+        <span class="card-link">Conhecer desenvolvimento <i data-icon="arrow"></i></span>
+      </a>
+
+      <a class="solution-card glow-card" href="#conexoes">
+        <img class="solution-image" src="assets/integration-reference.webp" width="1200" height="675" alt="Hub de integrações Atende Franca" loading="lazy">
+        <span class="glass-icon"><i data-icon="workflow"></i></span>
+        <span class="card-number">04 / INTEGRAÇÕES &amp; RAG</span>
+        <h3>Sistemas que conversam</h3>
+        <p>Base de conhecimento verificada e automações desenhadas conforme a infraestrutura do seu projeto.</p>
+        <span class="card-link">Explorar arquitetura <i data-icon="arrow"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2 DA DOCUMENTAÇÃO MESTRA: JORNADA INTERATIVA EM 4 CAPÍTULOS -->
+  <section class="journey-scrolly-section section" id="jornada" aria-labelledby="journey-title">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> A JORNADA DO ATENDIMENTO PASSO A PASSO</div>
+          <h2 id="journey-title">Do primeiro “olá”<br><em>à ação resolvida.</em></h2>
+        </div>
+        <p>Clique em cada capítulo para visualizar como a Bina, o Samuel, a Luma e sua equipe atuam em conjunto com governança total.</p>
+      </div>
+
+      <div class="journey-grid">
+        <div class="journey-steps" role="tablist" aria-label="Etapas da jornada de atendimento">
+          <button type="button" class="journey-step-card" role="tab" aria-selected="true" data-journey-step="01">
+            <span class="journey-step-num">01</span>
+            <div>
+              <h3>O contato chega sem fila</h3>
+              <p>Por voz, WhatsApp, chat no site ou portal público, a Bina recebe imediatamente e compreende a intenção inicial.</p>
+            </div>
+          </button>
+
+          <button type="button" class="journey-step-card" role="tab" aria-selected="false" data-journey-step="02">
+            <span class="journey-step-num">02</span>
+            <div>
+              <h3>Bina consulta a base aprovada (RAG)</h3>
+              <p>As respostas vêm de documentos, catálogos, normas ou portarias homologadas pela empresa ou órgão público.</p>
+            </div>
+          </button>
+
+          <button type="button" class="journey-step-card" role="tab" aria-selected="false" data-journey-step="03">
+            <span class="journey-step-num">03</span>
+            <div>
+              <h3>Ação autorizada: Samuel &amp; Luma</h3>
+              <p>Samuel estrutura oportunidades no pipeline comercial; Luma verifica disponibilidade de horários e orienta o suporte.</p>
+            </div>
+          </button>
+
+          <button type="button" class="journey-step-card" role="tab" aria-selected="false" data-journey-step="04">
+            <span class="journey-step-num">04</span>
+            <div>
+              <h3>Confirmação ou continuidade humana</h3>
+              <p>O atendimento conclui a etapa autorizada ou transfere para sua equipe com todo o resumo já estruturado.</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="journey-stage-card tilt-surface" aria-live="polite">
+          <div class="journey-stage-top">
+            <span class="journey-stage-badge"><span class="dot"></span> <span id="journey-stage-badge">ETAPA 01 · RECEPÇÃO IMEDIATA</span></span>
+            <span class="demo-tag">ARQUITETURA ATENDE FRANCA</span>
+          </div>
+          <div class="journey-stage-media">
+            <img id="journey-stage-img" src="assets/chat-reference.webp" width="1200" height="750" alt="Chat da Bina em vidro fosco recebendo o primeiro contato" loading="lazy">
+          </div>
+          <div class="journey-stage-caption">
+            <h4 id="journey-stage-title">O contato chega pelo canal preferido da pessoa.</h4>
+            <p id="journey-stage-desc">Seja por mensagem, voz, site institucional ou portal de atendimento ao cidadão, a Bina acolhe sem fila e identifica o assunto logo na primeira frase.</p>
+          </div>
+          <div class="journey-stage-pills" id="journey-stage-pills">
+            <span>Voz &amp; Áudio</span>
+            <span>WhatsApp &amp; Webchat</span>
+            <span>Portal Institucional / Gov</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BINA VOICE — EXPERIÊNCIA 3D NO SMARTPHONE & OCCLUSION CHOREOGRAPHY -->
+  <section class="voice-section" id="bina-voice">
+    <div class="wrap voice-layout section">
+      <div class="voice-story">
+        <div class="eyebrow"><span class="dot"></span> BINA VOICE / PRESENÇA QUE SE OUVE</div>
+        <h2>Pode falar.<br><em>Estou aqui.</em></h2>
+        <p>Uma dúvida sobre serviços, um horário de atendimento, uma qualificação comercial ou uma orientação ao cidadão. Experimente no smartphone ao lado como a Bina conduz cada cenário.</p>
+        <div class="voice-benefits">
+          <div><i data-icon="mic"></i><span>Compreensão em linguagem natural falada e escrita</span></div>
+          <div><i data-icon="calendar"></i><span>Jornadas de consulta, qualificação e agendamento</span></div>
+          <div><i data-icon="gov"></i><span>Triagem transparente para empresas e órgãos públicos</span></div>
+          <div><i data-icon="handoff"></i><span>Encaminhamento imediato com resumo para sua equipe</span></div>
+        </div>
+        <a class="button primary magnetic" href="#voice-screen">Testar simulador no aparelho <i data-icon="arrow"></i></a>
+        <p class="caption">Demonstração interativa guiada. Integrações de telefonia, voz e agenda são conectadas conforme o escopo do projeto.</p>
+      </div>
+
+      <div class="phone-scene">
+        <div class="voice-rings" aria-hidden="true"></div>
+        <!-- Mascote Bina em cerâmica faz a aproximação espacial e oclusão ao entrar na tela -->
+        <div class="phone-approach" aria-hidden="true">
+          <img src="assets/bina.webp" width="800" height="800" alt="" loading="lazy">
+        </div>
+
+        <div class="phone" id="voice-screen">
+          <div class="phone-island" aria-hidden="true"></div>
+          <div class="phone-status"><span>9:41</span><span aria-hidden="true">● ▮▮▮</span></div>
+          <div class="phone-app">
+            <span class="phone-demo">SIMULADOR INTERATIVO · BINA VOICE</span>
+            <img class="phone-avatar" src="assets/bina.webp" width="800" height="800" alt="Mascote Bina" loading="lazy">
+            <h3>Bina</h3>
+            <span class="phone-subtitle">Assistente virtual · Atende Franca</span>
+            <div class="phone-bars" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+            <p id="phone-response" aria-live="polite">Olá! Que bom receber você. Escolha um assunto abaixo para ouvir e simular como posso ajudar.</p>
+            <div class="phone-choices" role="group" aria-label="Cenários da Bina no celular">
+              <button type="button" data-phone="agenda" aria-pressed="false"><i data-icon="calendar"></i> Agenda</button>
+              <button type="button" data-phone="info" aria-pressed="false"><i data-icon="info"></i> Comercial</button>
+              <button type="button" data-phone="gov" aria-pressed="false"><i data-icon="gov"></i> Setor Público</button>
+              <button type="button" data-phone="equipe" aria-pressed="false"><i data-icon="people"></i> Equipe</button>
+            </div>
+            <span class="phone-disclaimer">Simulação demonstrativa · Sem chamada ou agendamento real.</span>
+          </div>
+          <div class="phone-home" aria-hidden="true"></div>
+        </div>
+
+        <div class="scene-caption"><i data-icon="shield"></i> A tecnologia acolhe e organiza. A decisão final continua humana.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE DE AGENTES: BINA, SAMUEL E LUMA (3D TILT CARDS) -->
+  <section class="team-section wrap section" id="equipe">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> PAPÉIS CLAROS. UMA EXPERIÊNCIA CONTÍNUA.</div>
+        <h2>Conheça quem faz<br><em>a conversa avançar.</em></h2>
+      </div>
+      <p>Três especialistas digitais com responsabilidades bem definidas para organizar recepção, oportunidades comerciais e rotina de agenda.</p>
+    </div>
+
+    <div class="team-grid">
+      <article class="agent-card agent-bina">
+        <div class="agent-image">
+          <div class="agent-orbit"></div>
+          <img src="assets/agent-bina.webp" width="667" height="1000" alt="Bina, especialista em recepção e voz" loading="lazy">
+          <span class="agent-badge"><i data-icon="messages"></i> RECEPÇÃO, TRIAGEM &amp; VOZ</span>
+        </div>
+        <div class="agent-description">
+          <span>01 / O PRIMEIRO CONTATO</span>
+          <h3>Bina</h3>
+          <p>Recebe clientes e cidadãos, entende o contexto em linguagem natural, responde dúvidas com base na documentação aprovada e direciona o próximo passo.</p>
+        </div>
+        <button type="button" class="agent-view" data-agent-image="portrait" data-agent-title="Bina — Recepção Digital e Voz">Ver retrato oficial do projeto <i data-icon="arrow"></i></button>
+      </article>
+
+      <article class="agent-card agent-samuel">
+        <div class="agent-image">
+          <div class="agent-orbit"></div>
+          <img src="assets/agent-samuel.webp" width="667" height="1000" alt="Samuel, especialista comercial com tablet" loading="lazy">
+          <span class="agent-badge"><i data-icon="chart"></i> QUALIFICAÇÃO COMERCIAL &amp; PIPELINE</span>
+        </div>
+        <div class="agent-description">
+          <span>02 / OPORTUNIDADES COM CONTEXTO</span>
+          <h3>Samuel</h3>
+          <p>Identifica o perfil da demanda comercial, organiza informações essenciais no pipeline e prepara o resumo para que sua equipe feche mais negócios.</p>
+        </div>
+        <button type="button" class="agent-view" data-agent-image="samuel-reference" data-agent-title="Samuel no Pipeline de Qualificação Comercial">Ver cena no pipeline <i data-icon="arrow"></i></button>
+      </article>
+
+      <article class="agent-card agent-luma">
+        <div class="agent-image">
+          <div class="agent-orbit"></div>
+          <img src="assets/agent-luma.webp" width="800" height="1000" alt="Luma, especialista em suporte e agenda" loading="lazy">
+          <span class="agent-badge"><i data-icon="calendar"></i> SUPORTE, AGENDA &amp; CONTINUIDADE</span>
+        </div>
+        <div class="agent-description">
+          <span>03 / CUIDADO COM A ROTINA</span>
+          <h3>Luma</h3>
+          <p>Apoia dúvidas operacionais, organiza solicitações de horários, confirmações e acompanhamento contínuo com clareza e acolhimento.</p>
+        </div>
+        <button type="button" class="agent-view" data-agent-image="agenda-reference" data-agent-title="Luma na Confirmação de Agenda">Ver cena de agenda <i data-icon="arrow"></i></button>
+      </article>
+    </div>
+  </section>
+
+  <div class="team-source-banner wrap">
+    <figure>
+      <img src="assets/people-reference.webp" width="1200" height="675" alt="Pessoas no centro, IA ao seu lado — Equipe Atende Franca" loading="lazy">
+      <figcaption>PESSOAS NO CENTRO · IA AO SEU LADO</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/team-reference.webp" width="1200" height="675" alt="Bina, Samuel e Luma reunidos" loading="lazy">
+      <figcaption>INTEGRAÇÃO ENTRE BINA, SAMUEL E LUMA</figcaption>
+    </figure>
+  </div>
+
+  <!-- ALTA CONVERSÃO COMERCIAL + INSTITUCIONAL + ÓRGÃOS DO GOVERNO -->
+  <section class="gov-commercial-section section" id="setores-governo" style="background:#edf2ec">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> ARQUITETURA VERSÁTIL · PRIVADO &amp; PÚBLICO</div>
+          <h2>Alta conversão comercial.<br><em>Rigor institucional e público.</em></h2>
+        </div>
+        <p>Desenhamos cada projeto respeitando o objetivo de negócio: velocidade de vendas para empresas privadas ou transparência normativa e acessibilidade para instituições e órgãos do governo.</p>
+      </div>
+
+      <div class="sector-panel-grid">
+        <!-- Card 1: Comercial -->
+        <article class="liquid-glass-card">
+          <div>
+            <span class="card-kicker"><i data-icon="chart"></i> ALTA CONVERSÃO COMERCIAL</span>
+            <h3>Empresas, Clínicas, Varejo e B2B</h3>
+            <p>Não perca oportunidades fora do horário comercial ou em picos de demanda. Receba, qualifique e agende em segundos.</p>
+            <ul class="card-checklist">
+              <li>Recepção imediata em anúncios, landing pages e WhatsApp</li>
+              <li>Qualificação de perfil e intenção de compra com o Samuel</li>
+              <li>Jornadas de agendamento e lembretes com a Luma</li>
+              <li>Landing pages e e-commerces projetados para conversão</li>
+            </ul>
+          </div>
+          <a href="#conversa" class="button primary magnetic" style="width:100%">Quero acelerar minhas vendas <i data-icon="arrow"></i></a>
+        </article>
+
+        <!-- Card 2: Institucional -->
+        <article class="liquid-glass-card">
+          <div>
+            <span class="card-kicker"><i data-icon="building"></i> INSTITUCIONAL &amp; CORPORATIVO</span>
+            <h3>Entidades, Associações, Educação e Redes</h3>
+            <p>Fortaleça a autoridade da sua organização com portais claros e atendimento baseado em normas e documentos internos.</p>
+            <ul class="card-checklist">
+              <li>Portais institucionais com identidade visual autoral</li>
+              <li>Respostas baseadas em regulamentos, editais e FAQs oficiais</li>
+              <li>Triagem inteligente entre departamentos (Financeiro, Secretaria, RH)</li>
+              <li>Histórico organizado para equipes de atendimento e suporte</li>
+            </ul>
+          </div>
+          <a href="#conversa" class="button magnetic" style="width:100%;background:#fff">Estruturar portal institucional <i data-icon="arrow"></i></a>
+        </article>
+
+        <!-- Card 3: Órgãos do Governo -->
+        <article class="liquid-glass-card featured-gov">
+          <div>
+            <span class="card-kicker"><i data-icon="gov"></i> ÓRGÃOS DO GOVERNO &amp; SETOR PÚBLICO</span>
+            <h3>Prefeituras, Secretarias, Câmaras e Autarquias</h3>
+            <p>Aproxime o serviço público do cidadão com orientação 24h auditável, acessível e estritamente fiel aos atos oficiais.</p>
+            <ul class="card-checklist">
+              <li>Orientação ao cidadão sobre documentos, prazos, taxas e serviços</li>
+              <li>Triagem para Ouvidoria, Protocolo e Secretarias Municipais/Estaduais</li>
+              <li>Base RAG restrita a portarias, leis e guias homologados (sem improviso)</li>
+              <li>Acessibilidade (WCAG AA), identificação transparente de IA e LGPD</li>
+            </ul>
+          </div>
+          <a href="#conversa" class="button primary magnetic" style="width:100%">Solicitar apresentação para Órgão Público <i data-icon="arrow"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGMENTOS REGIONAIS -->
+  <section class="segment-section" id="segmentos">
+    <div class="wrap section">
+      <div class="eyebrow"><span class="dot"></span> DE FRANCA, PARA DIFERENTES ROTINAS</div>
+      <h2>Cada operação tem<br><em>seu próprio ritmo.</em></h2>
+      <div class="segments" style="grid-template-columns:repeat(4,1fr);gap:32px">
+        <article>
+          <span>01</span>
+          <h3>Saúde e cuidado</h3>
+          <p>Recepção administrativa, orientações de preparo e jornadas de agendamento para clínicas, laboratórios e centros de saúde.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Comércio e serviços</h3>
+          <p>Presença digital e atendimento rápido para apresentar catálogos, responder dúvidas e converter visitantes em clientes.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Setor público e cidadania</h3>
+          <p>Canais de orientação ao cidadão, triagem de ouvidoria e portais acessíveis para prefeituras, câmaras e autarquias.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Indústria e B2B</h3>
+          <p>Sites institucionais, sistemas web e automações desenhadas sob medida a partir da operação da sua empresa.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUÍTE INTERATIVA DE APLICAÇÕES: CENTRAL OMNICHANNEL + PIPELINE + FLUXO + MATRIZ -->
+  <section class="central-section" id="central">
+    <div class="wrap section">
+      <div class="central-heading">
+        <div class="eyebrow"><span class="dot"></span> APLICAÇÕES INTERATIVAS · EXPERIMENTE NA PRÁTICA</div>
+        <h2>Da conversa ao painel.<br><em>Tudo conectado com clareza.</em></h2>
+        <p>Alterne entre as 4 aplicações abaixo para testar a Central de Atendimento com intervenção humana, o Pipeline do Samuel, o Fluxo Multiagente e a Matriz de Governança.</p>
+      </div>
+
+      <!-- Interactive Suite Tabs -->
+      <div class="app-suite-tabs" role="tablist" aria-label="Aplicações demonstrativas da Atende Franca">
+        <button type="button" class="app-suite-tab" role="tab" aria-selected="true" data-suite-tab="inbox">
+          <i data-icon="messages"></i> 01. Central de Atendimento (Inbox)
+        </button>
+        <button type="button" class="app-suite-tab" role="tab" aria-selected="false" data-suite-tab="pipeline">
+          <i data-icon="chart"></i> 02. Pipeline Comercial (Samuel)
+        </button>
+        <button type="button" class="app-suite-tab" role="tab" aria-selected="false" data-suite-tab="fluxo">
+          <i data-icon="workflow"></i> 03. Fluxo Bina + Samuel + Luma
+        </button>
+        <button type="button" class="app-suite-tab" role="tab" aria-selected="false" data-suite-tab="matriz">
+          <i data-icon="shield"></i> 04. Matriz de Canais &amp; Governança
+        </button>
+      </div>
+
+      <div class="inbox-window tilt-surface">
+        <div class="inbox-toolbar">
+          <span class="window-dots"><b></b><b></b><b></b></span>
+          <span>Atende Franca · Plataforma Demonstrativa de Atendimento e Governança</span>
+          <span class="demo-tag">SIMULAÇÃO INTERATIVA</span>
+        </div>
+
+        <!-- PANEL 1: INBOX OMNICHANNEL -->
+        <div class="inbox-content" data-suite-panel="inbox">
+          <aside class="inbox-sidebar">
+            <span class="inbox-monogram"><i data-icon="brand"></i></span>
+            <span class="active"><i data-icon="messages"></i></span>
+            <span><i data-icon="people"></i></span>
+            <span><i data-icon="calendar"></i></span>
+            <span><i data-icon="gov"></i></span>
+          </aside>
+
+          <div class="inbox-list">
+            <h3>Conversas <span>04</span></h3>
+            <button type="button" class="inbox-person selected" data-inbox="ana" aria-pressed="true">
+              <span class="initial-avatar">AC</span>
+              <span><strong>Ana Costa</strong><small>Clínica · Horários da semana</small></span>
+              <time>Agora</time>
+            </button>
+            <button type="button" class="inbox-person" data-inbox="marcos" aria-pressed="false">
+              <span class="initial-avatar blue">ML</span>
+              <span><strong>Marcos Lima</strong><small>Comercial · Site + IA</small></span>
+              <time>10:24</time>
+            </button>
+            <button type="button" class="inbox-person" data-inbox="ouvidoria" aria-pressed="false">
+              <span class="initial-avatar" style="background:#d9ece8;color:#1b5e5a">OP</span>
+              <span><strong>Cidadão / Ouvidoria</strong><small>Setor Público · Protocolo</small></span>
+              <time>10:20</time>
+            </button>
+            <button type="button" class="inbox-person" data-inbox="julia" aria-pressed="false">
+              <span class="initial-avatar terra">JS</span>
+              <span><strong>Júlia Souza</strong><small>Encaminhamento humano</small></span>
+              <time>10:18</time>
+            </button>
+            <div class="inbox-note">
+              <i data-icon="spark"></i>
+              <p>O resumo e a intenção acompanham cada conversa.</p>
+            </div>
+          </div>
+
+          <div class="inbox-chat">
+            <div class="chat-person">
+              <strong id="inbox-name">Ana Costa · Clínica &amp; Saúde</strong>
+              <span class="lead-temp-badge" id="inbox-temp">Quente · Agenda</span>
+              <button type="button" class="human-takeover-btn" id="takeover-toggle" aria-pressed="false">
+                Assumir conversa como humano
+              </button>
+            </div>
+
+            <div id="inbox-messages">
+              <div class="bubble customer">Olá! Quero saber como consultar os horários de atendimento desta semana.</div>
+              <div class="bubble assistant">Olá, Ana! Sou a Bina. Numa agenda conectada ao projeto, a Luma verifica os horários livres e confirma sua preferência em segundos.</div>
+            </div>
+
+            <div class="chat-context">
+              <i data-icon="spark"></i>
+              <span id="inbox-context">Intenção: agendamento | Agente ativo: Bina → Luma</span>
+            </div>
+
+            <div class="inbox-quick-replies" id="inbox-quick-replies" aria-label="Simular próxima mensagem"></div>
+
+            <div class="chat-compose">
+              <span id="inbox-compose-label">Modo Assistente IA ativo · Clique nas sugestões acima para simular</span>
+              <i data-icon="send"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 2: PIPELINE COMERCIAL DO SAMUEL -->
+        <div class="suite-panel" data-suite-panel="pipeline" hidden>
+          <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center">
+            <div>
+              <div class="eyebrow"><span class="dot"></span> QUALIFICAÇÃO COMERCIAL · SAMUEL</div>
+              <h3 style="margin:10px 0 8px;font-size:24px">Oportunidades organizadas por estágio</h3>
+              <p style="font-size:12.5px;margin-bottom:18px;max-width:none">Veja como o Samuel classifica as conversas iniciadas pela Bina para que sua equipe comercial ou institucional saiba exatamente quem priorizar.</p>
+              <div class="pipeline-board">
+                <div class="pipeline-col">
+                  <h4>1. Triagem Bina <span>02</span></h4>
+                  <div class="pipeline-item">
+                    <strong>Clínica Santa Helena</strong>
+                    <small>Dúvida sobre recepção e agenda</small>
+                    <span>Recepção IA</span>
+                  </div>
+                  <div class="pipeline-item">
+                    <strong>Portal Municipal</strong>
+                    <small>Consulta sobre triagem de ouvidoria</small>
+                    <span>Setor Público</span>
+                  </div>
+                </div>
+                <div class="pipeline-col">
+                  <h4>2. Qualificado <span>02</span></h4>
+                  <div class="pipeline-item">
+                    <strong>Marcos Lima · Varejo</strong>
+                    <small>Landing page + atendimento WhatsApp</small>
+                    <span>Quente · Samuel</span>
+                  </div>
+                  <div class="pipeline-item">
+                    <strong>Rede Odonto Franca</strong>
+                    <small>Confirmação de horários com Luma</small>
+                    <span>Morno · Samuel</span>
+                  </div>
+                </div>
+                <div class="pipeline-col">
+                  <h4>3. Agenda Luma <span>01</span></h4>
+                  <div class="pipeline-item">
+                    <strong>Ana Costa</strong>
+                    <small>Reunião de diagnóstico solicitada</small>
+                    <span>Horário sugerido</span>
+                  </div>
+                </div>
+                <div class="pipeline-col">
+                  <h4>4. Com Equipe <span>01</span></h4>
+                  <div class="pipeline-item">
+                    <strong>Júlia Souza</strong>
+                    <small>Análise de contrato sob medida</small>
+                    <span>Handoff Humano</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img src="assets/samuel-reference.webp" width="900" height="600" alt="Samuel no pipeline de qualificação comercial" style="width:100%;height:auto;border-radius:16px;border:1px solid rgba(27,94,90,0.16)" loading="lazy">
+              <span class="source-label">CENA ILUSTRATIVA · SAMUEL NO PIPELINE DE QUALIFICAÇÃO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 3: FLUXO MULTIAGENTE BINA, SAMUEL E LUMA -->
+        <div class="suite-panel" data-suite-panel="fluxo" hidden>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center">
+            <div>
+              <img src="assets/agent-flow.webp" width="1000" height="650" alt="Fluxo de atendimento entre Bina, Samuel e Luma" style="width:100%;height:auto;border-radius:16px;border:1px solid rgba(27,94,90,0.16)" loading="lazy">
+              <span class="source-label">ARQUITETURA VISUAL · ORQUESTRAÇÃO ENTRE OS TRÊS AGENTES</span>
+            </div>
+            <div>
+              <div class="eyebrow"><span class="dot"></span> ORQUESTRAÇÃO COM REGRAS CLARAS</div>
+              <h3 style="margin:10px 0 12px;font-size:26px">Como Bina, Samuel e Luma dividem o trabalho</h3>
+              <p style="font-size:13px;max-width:none">Ao contrário de um chatbot único que tenta fazer tudo sem foco, separamos a experiência em papéis compreensíveis para o cliente e para a sua equipe:</p>
+              <ul class="card-checklist">
+                <li><strong>1. Bina (Recepção &amp; Voz):</strong> acolhe, identifica se a demanda é comercial, suporte, agendamento ou protocolo público e consulta a Base de Conhecimento (RAG).</li>
+                <li><strong>2. Samuel (Comercial &amp; SDR):</strong> entra em ação quando há oportunidade de negócio, coletando escopo e priorizando o contato.</li>
+                <li><strong>3. Luma (Suporte &amp; Agenda):</strong> conduz dúvidas operacionais recorrentes e etapas de disponibilidade de horários.</li>
+                <li><strong>4. Equipe Humana:</strong> recebe o histórico estruturado sempre que a conversa exige validação técnica, comercial ou institucional.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 4: MATRIZ DE CANAIS E DEPENDÊNCIAS -->
+        <div class="suite-panel" data-suite-panel="matriz" hidden>
+          <div class="eyebrow" style="margin-bottom:8px"><span class="dot"></span> TRANSPARÊNCIA TÉCNICA · MATRIZ DE CANAIS E DEPENDÊNCIAS</div>
+          <h3 style="margin:0 0 14px;font-size:22px">O que está demonstrado nesta página vs. como ativamos no seu projeto</h3>
+          <div class="matrix-table-wrap">
+            <table class="matrix-table">
+              <thead>
+                <tr>
+                  <th>Canal / Capacidade</th>
+                  <th>Papel na Operação</th>
+                  <th>Status nesta Página</th>
+                  <th>Requisito na Implantação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Webchat &amp; Portal Digital</strong></td>
+                  <td>Recepção imediata no site ou portal institucional/público</td>
+                  <td><span class="status-chip">Simulação Interativa</span></td>
+                  <td>Definição de fluxos e incorporação no domínio do cliente</td>
+                </tr>
+                <tr>
+                  <td><strong>Bina Voice (Voz)</strong></td>
+                  <td>Atendimento falado, triagem e orientação natural</td>
+                  <td><span class="status-chip">Demonstração Guiada</span></td>
+                  <td>Configuração de síntese/reconhecimento de voz e escopo de áudio</td>
+                </tr>
+                <tr>
+                  <td><strong>WhatsApp Business</strong></td>
+                  <td>Atendimento contínuo, qualificação e lembretes</td>
+                  <td><span class="status-chip">Cenário Ilustrado</span></td>
+                  <td>Conta oficial aprovada e integração de API no projeto</td>
+                </tr>
+                <tr>
+                  <td><strong>Agenda &amp; CRM (Luma / Samuel)</strong></td>
+                  <td>Consulta de disponibilidade e registro de leads</td>
+                  <td><span class="status-chip">Painel Demonstrativo</span></td>
+                  <td>Conexão via API/Webhook com a ferramenta utilizada pelo cliente</td>
+                </tr>
+                <tr>
+                  <td><strong>Base Documental (RAG / Gov)</strong></td>
+                  <td>Respostas fiéis a manuais, catálogos, leis e portarias</td>
+                  <td><span class="status-chip">Arquitetura Documentada</span></td>
+                  <td>Curadoria e aprovação formal dos documentos pela organização</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA DE CENÁRIOS E APLICAÇÕES -->
+  <section class="commercial-cases wrap section" id="aplicacoes">
+    <div class="case-heading">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> SEUS CENÁRIOS. SUA OPERAÇÃO.</div>
+        <h2>Veja onde a conversa<br><em>pode chegar.</em></h2>
+      </div>
+      <div class="case-navigation" aria-label="Cenários de aplicação">
+        <button type="button" data-case="atendimento" aria-pressed="true">Atendimento</button>
+        <button type="button" data-case="agenda" aria-pressed="false">Agenda</button>
+        <button type="button" data-case="vendas" aria-pressed="false">Comercial &amp; Vendas</button>
+        <button type="button" data-case="voz" aria-pressed="false">Voz &amp; 3D</button>
+        <button type="button" data-case="governo" aria-pressed="false">Institucional &amp; Gov</button>
+      </div>
+    </div>
+
+    <div class="case-layout">
+      <div>
+        <img id="case-image" src="assets/mobile-commerce.webp" width="1200" height="675" alt="Conceito de atendimento da Atende Franca no smartphone" loading="lazy">
+        <span class="source-label">CONCEITO VISUAL AUTORAL · CENÁRIO ILUSTRATIVO</span>
+      </div>
+      <div class="case-details">
+        <div class="eyebrow" id="case-label">ATENDIMENTO COM CONTEXTO</div>
+        <h3 id="case-title">Seu cliente ou cidadão tem uma dúvida. A conversa começa.</h3>
+        <p id="case-description">Mensagens, informações e próximos passos apresentados com a identidade do seu negócio ou instituição.</p>
+        <div class="case-actions">
+          <button type="button" data-direction="prev" aria-label="Imagem anterior do cenário"><i data-icon="arrow"></i></button>
+          <span class="case-counter" id="case-counter">1 / 3</span>
+          <button type="button" data-direction="next" aria-label="Próxima imagem do cenário"><i data-icon="arrow"></i></button>
+        </div>
+        <a href="#conversa" class="text-link">Conversar sobre esse cenário <i data-icon="arrow"></i></a>
+        <p class="caption">Exemplos visuais do projeto. As integrações reais são definidas no escopo de implantação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRIAÇÃO DE SITES, PORTAIS E SISTEMAS WEB -->
+  <section class="sites wrap section" id="sites">
+    <div class="site-preview">
+      <div class="browser-bar"><i></i><i></i><i></i><span>suaorganizacao.com.br</span></div>
+      <div class="mini-site">
+        <img src="assets/commerce.webp" width="1200" height="675" alt="Conceito visual de presença digital e e-commerce com IA" loading="lazy">
+      </div>
+      <div class="site-tag">Design autoral + performance + atendimento integrado</div>
+    </div>
+    <div>
+      <div class="eyebrow"><span class="dot"></span> CRIAÇÃO DE SITES, PORTAIS E SISTEMAS</div>
+      <h2>Sua identidade.<br><em>Em cada detalhe.</em></h2>
+      <p>Criamos desde landing pages comerciais de alta conversão até portais institucionais e sistemas web estruturados para empresas e órgãos públicos.</p>
+      <ul class="site-features">
+        <li>Design autoral, navegação Liquid Glass e experiência mobile impecável</li>
+        <li>Arquitetura acessível (WCAG AA), rápida e otimizada para leitura clara</li>
+        <li>Pronto para receber a Bina, o Samuel e a Luma integrados à jornada</li>
+      </ul>
+      <div class="site-showcase">
+        <span><i data-icon="spark"></i> Landing Pages Comerciais</span>
+        <span><i data-icon="building"></i> Portais Institucionais</span>
+        <span><i data-icon="gov"></i> Portais Públicos &amp; Cidadão</span>
+        <span><i data-icon="code"></i> Sistemas Web Sob Medida</span>
+      </div>
+      <br>
+      <a class="button primary magnetic" href="#conversa">Quero planejar meu site ou portal <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <!-- HUB DE CONEXÕES E INTEGRAÇÕES -->
+  <section class="connections wrap section" id="conexoes">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> A INFORMAÇÃO CERTA, NO LUGAR CERTO</div>
+      <h2>Conectar faz<br><em>toda a diferença.</em></h2>
+      <p>Seu atendimento precisa conversar com a rotina real da organização. Mapeamos canais, documentos, agendas, CRMs e sistemas internos para desenhar as integrações do projeto.</p>
+      <div class="connection-legend"><span class="dot"></span> Arquitetura de integração validada etapa por etapa no escopo técnico.</div>
+      <a href="#conversa" class="text-link">Mapear integrações da minha operação <i data-icon="arrow"></i></a>
+    </div>
+    <div class="connection-map">
+      <img class="integration-source" src="assets/integration-reference.webp" width="1200" height="800" alt="Hub de integrações Atende Franca conectando Bina aos canais e sistemas" loading="lazy">
+      <span class="source-label">HUB DE CONEXÕES · CONCEITO VISUAL DO PROJETO</span>
+    </div>
+  </section>
+
+  <!-- BASE DE CONHECIMENTO (RAG) -->
+  <section class="knowledge-section wrap" id="conhecimento">
+    <div class="knowledge-visual">
+      <img src="assets/knowledge.webp" width="1000" height="1000" loading="lazy" alt="Base de conhecimento conectada à Bina AI">
+    </div>
+    <div>
+      <div class="eyebrow"><span class="dot"></span> BASE DE CONHECIMENTO VERIFICADA (RAG)</div>
+      <h2>Seu jeito de atender.<br><em>Suas fontes oficiais.</em></h2>
+      <p>Catálogos comerciais, tabelas de serviços, regimentos internos ou portarias públicas aprovadas pela sua organização compõem uma base segura e auditável para o atendimento.</p>
+      <div class="knowledge-flow">
+        <span><i data-icon="files"></i> 1. Homologar Documentos</span>
+        <i data-icon="arrow"></i>
+        <span><i data-icon="search"></i> 2. Consultar com Contexto</span>
+        <i data-icon="arrow"></i>
+        <span><i data-icon="messages"></i> 3. Responder sem Improviso</span>
+      </div>
+      <p class="caption">Fontes, níveis de acesso e regras de encaminhamento são definidos e validados antes da entrada em produção.</p>
+    </div>
+  </section>
+
+  <!-- PROCESSO DE IMPLANTAÇÃO -->
+  <section class="process-section" id="como-funciona">
+    <div class="wrap section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> CONSTRUÍDO JUNTO, PASSO A PASSO</div>
+          <h2>Da sua rotina<br><em>ao projeto em operação.</em></h2>
+        </div>
+        <p>Seja em uma empresa comercial ou em uma instituição pública, começamos entendendo o que precisa funcionar melhor.</p>
+      </div>
+      <div class="process-grid">
+        <article>
+          <span class="process-icon"><i data-icon="search"></i></span>
+          <span class="process-number">01</span>
+          <h3>Diagnóstico e Escuta</h3>
+          <p>Mapeamos seu público, seus canais atuais, os gargalos de atendimento e as metas de conversão ou serviço público.</p>
+        </article>
+        <article>
+          <span class="process-icon"><i data-icon="layers"></i></span>
+          <span class="process-number">02</span>
+          <h3>Arquitetura e Escopo</h3>
+          <p>Definimos a identidade visual, os fluxos da Bina, Samuel e Luma, os documentos da base e as integrações necessárias.</p>
+        </article>
+        <article>
+          <span class="process-icon"><i data-icon="code"></i></span>
+          <span class="process-number">03</span>
+          <h3>Construção e Homologação</h3>
+          <p>Sua equipe acompanha e valida um ambiente revisável com testes de precisão, acessibilidade e segurança antes da ativação.</p>
+        </article>
+        <article>
+          <span class="process-icon"><i data-icon="chart"></i></span>
+          <span class="process-number">04</span>
+          <h3>Operação Assistida</h3>
+          <p>Acompanhamos os indicadores combinados, evoluímos a base de conhecimento e apoiamos sua equipe no dia a dia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDENTIDADE LOCAL: FRANCA SP -->
+  <section class="local-section wrap section" id="sobre">
+    <div class="local-card">
+      <div class="local-coordinates"><i data-icon="pin"></i> FRANCA · SÃO PAULO · BRASIL</div>
+      <h2>Tecnologia próxima.<br><em>De verdade.</em></h2>
+      <p>Uma empresa de Franca pensando nas pessoas, nas empresas e nas instituições que constroem o dia a dia. Da clínica ao varejo, da indústria aos órgãos públicos: cada projeto começa com uma conversa honesta sobre a sua realidade.</p>
+      <a href="#conversa" class="button primary magnetic">Vamos construir juntos <i data-icon="arrow"></i></a>
+    </div>
+  </section>
+
+  <!-- PERGUNTAS FREQUENTES (FAQ) -->
+  <section class="faq-section wrap section" id="duvidas">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> ANTES DO PRÓXIMO PASSO</div>
+      <h2>Perguntas frequentes<br><em>com respostas diretas.</em></h2>
+      <p>Transparência desde o primeiro contato sobre como funcionam nossas demonstrações, implantações comerciais e projetos institucionais.</p>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>O que posso experimentar diretamente nesta página?<i data-icon="plus"></i></summary>
+        <p>Você pode testar o simulador de voz e cenários da Bina no Hero e no smartphone, navegar pela Central de Atendimento demonstrativa, alternar para o modo de operador humano, explorar o pipeline do Samuel e preparar seu briefing. Todas as simulações usam exemplos identificados e não gravam agendamentos externos.</p>
+      </details>
+      <details>
+        <summary>A solução atende tanto empresas comerciais quanto órgãos públicos?<i data-icon="plus"></i></summary>
+        <p>Sim. Para empresas privadas, focamos em velocidade de resposta, qualificação comercial com o Samuel, agendamento com a Luma e páginas de alta conversão. Para instituições e órgãos do governo (prefeituras, secretarias, câmaras e autarquias), estruturamos portais acessíveis (WCAG AA), orientação ao cidadão baseada em documentos oficiais aprovados (RAG), triagem de ouvidoria e conformidade com a LGPD.</p>
+      </details>
+      <details>
+        <summary>Posso contratar apenas a criação do site, portal ou sistema web?<i data-icon="plus"></i></summary>
+        <p>Sim. A criação de sites institucionais, landing pages de alta conversão e sistemas web é uma frente completa da Atende Franca, podendo ser contratada de forma independente ou já integrada aos agentes de IA.</p>
+      </details>
+      <details>
+        <summary>A inteligência artificial substitui minha equipe ou os servidores?<i data-icon="plus"></i></summary>
+        <p>Não. Nossa diretriz é “Pessoas no centro, IA ao seu lado”. A Bina, o Samuel e a Luma absorvem a triagem repetitiva, organizam informações e respondem dúvidas documentadas, transferindo para sua equipe humana sempre que o atendimento exigir análise sensível ou decisão especializada.</p>
+      </details>
+      <details>
+        <summary>Como são definidos valores, prazos e modalidade de contratação?<i data-icon="plus"></i></summary>
+        <p>Não utilizamos tabelas genéricas que prometem recursos sem conhecer sua operação. Após um diagnóstico rápido dos canais, volume e integrações desejadas, entregamos uma proposta técnica e comercial sob medida (incluindo documentação técnica detalhada para processos institucionais e públicos).</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- PLANOS E PARCERIAS -->
+  <section class="offer-section wrap section">
+    <article id="oferta">
+      <div class="eyebrow"><span class="dot"></span> PLANOS E PROPOSTAS SOB MEDIDA</div>
+      <h2>Um escopo desenhado<br><em>para o seu momento.</em></h2>
+      <p>Dimensionamos o projeto conforme a sua necessidade: apenas Presença Digital (Site/Portal), implantação dos Agentes de IA (Bina, Samuel e Luma) ou o Ecossistema Completo com integrações. Valores e cronograma são apresentados após o diagnóstico.</p>
+      <a class="text-link" href="#conversa">Preparar briefing para proposta <i data-icon="arrow"></i></a>
+    </article>
+    <article id="parcerias">
+      <div class="eyebrow"><span class="dot"></span> ECOSSISTEMA E PARCERIAS</div>
+      <h2>Vamos construir<br><em>em conjunto?</em></h2>
+      <p>Atuamos junto a software houses, consultorias, agências e entidades de classe para integrar atendimento inteligente e experiências web em novos projetos. Nenhuma organização é exibida como parceira sem aprovação formal.</p>
+      <a class="text-link" href="#conversa">Propor parceria ou integração <i data-icon="arrow"></i></a>
+    </article>
+  </section>
+
+  <!-- CTA FINAL COM CENA DE DESPEDIDA DA BINA (welcome.webp) -->
+  <section class="contact wrap section" id="conversa">
+    <div class="final-cta-banner">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> O PRÓXIMO PASSO COMEÇA COM UMA CONVERSA</div>
+        <h2>O que podemos<br><em>simplificar juntos?</em></h2>
+        <p>Conte qual rotina comercial, institucional ou de atendimento ao cidadão você quer transformar. Prepare seu briefing em 1 minuto ou fale com um especialista.</p>
+        <div class="actions" style="margin-top:22px">
+          <button class="button primary magnetic" id="open-contact" type="button">
+            Preparar meu briefing agora <span aria-hidden="true">↗</span>
+          </button>
+          <a class="button" href="#bina-voice" style="color:#fff;border-color:rgba(255,255,255,0.28)">
+            Rever demonstração da Bina
+          </a>
+        </div>
+      </div>
+      <div class="final-cta-visual">
+        <img src="assets/welcome.webp" width="1000" height="650" alt="Bina convida ao próximo passo do projeto" loading="lazy">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <span class="footer-brand">
+    <i data-icon="brand"></i>
+    <span><strong>atende franca</strong><br>Pessoas no centro. IA ao seu lado · Comercial, Institucional e Setor Público.</span>
+  </span>
+  <span class="version-pill"><span class="dot"></span> Demonstrações identificadas com transparência</span>
+  <button id="motion-toggle" type="button" aria-pressed="false">Pausar movimento</button>
+</footer>
+
+<!-- DIALOGS -->
+<dialog id="demo-dialog">
+  <button class="close" data-close aria-label="Fechar demonstração">×</button>
+  <div class="eyebrow">DEMONSTRAÇÃO GUIADA</div>
+  <h2>Uma ideia<br><em>de conversa.</em></h2>
+  <p>Este exemplo não acessa agenda externa nem inicia chamada telefônica real.</p>
+  <div id="demo-message" class="bubble assistant" aria-live="polite">Sou a Bina, assistente virtual da Atende Franca. Qual cenário você gostaria de explorar?</div>
+  <div class="dialog-actions">
+    <button class="button" type="button" data-example="agenda">Agendamento com Luma</button>
+    <button class="button" type="button" data-example="humano">Continuidade com a equipe</button>
+  </div>
+</dialog>
+
+<dialog id="contact-dialog">
+  <button class="close" data-close aria-label="Fechar briefing">×</button>
+  <div class="eyebrow"><span class="dot"></span> SEU PRÓXIMO PROJETO</div>
+  <h2>Prepare seu briefing.</h2>
+  <form id="brief-form">
+    <label>Empresa, Instituição ou Órgão Público
+      <input name="company" required maxlength="120" placeholder="Ex.: Clínica Vida, Empresa ABC ou Secretaria Municipal">
+    </label>
+    <label>Qual é o perfil e frente principal?
+      <select name="service">
+        <option>Comercial — Atendimento com IA + Qualificação (Bina, Samuel e Luma)</option>
+        <option>Comercial — Landing Page de Alta Conversão / E-commerce</option>
+        <option>Institucional — Portal Corporativo + Base de Conhecimento (RAG)</option>
+        <option>Órgão Público / Governo — Atendimento ao Cidadão, Ouvidoria e Portal</option>
+        <option>Ecossistema Completo — Site/Sistema + Agentes de IA + Integrações</option>
+      </select>
+    </label>
+    <label>Qual rotina, canal ou atendimento precisa melhorar?
+      <textarea name="need" required maxlength="2000" rows="3" placeholder="Descreva os canais desejados, principais dúvidas do público e sistemas que utiliza..."></textarea>
+    </label>
+    <button class="button primary" type="submit">Baixar meu briefing estruturado ↓</button>
+    <p class="caption">O documento é gerado localmente no seu dispositivo com o resumo pronto para envio.</p>
+  </form>
+</dialog>
+
+<dialog id="source-dialog" class="source-dialog">
+  <button class="close" data-close aria-label="Fechar imagem">×</button>
+  <strong id="source-title">Imagem do projeto</strong>
+  <img id="source-image" alt="">
+  <p class="caption">Arte visual original integrante da documentação do projeto Atende Franca.</p>
+</dialog>
+</body>
+</html>
