@@ -230,83 +230,508 @@ document.querySelectorAll('[data-phone]').forEach((button) =>
 );
 
 // ============================================================================
-// 4. INTERACTIVE CENTRAL OMNICHANNEL INBOX + HUMAN TAKEOVER
+// 4. INTERACTIVE CENTRAL OMNICHANNEL INBOX (21ST.DEV CHAT + STREAMING TOKENS)
 // ============================================================================
 const inboxExamples = {
   ana: {
-    name: 'Ana Costa · Clínica & Saúde',
-    temp: 'Quente · Agenda',
-    question: 'Olá! Quero saber como consultar os horários de atendimento desta semana.',
-    answer:
-      'Olá, Ana! Sou a Bina. Numa agenda conectada ao projeto, a Luma verifica os horários livres e confirma sua preferência em segundos.',
-    context: 'Intenção: agendamento | Agente ativo: Bina → Luma',
+    name: 'Ana Costa · Clínica Santa Helena',
+    channel: 'WhatsApp Oficial · +55 (16) 99241-8830 · Online agora',
+    temp: 'Quente · Agenda Luma',
+    clientName: 'Ana Costa',
+    clientAvatar: 'assets/client-ana.jpg',
+    agentName: 'Luma AI',
+    agentRole: 'Especialista em Agenda',
+    agentAvatar: 'assets/agent-luma.webp',
+    context: 'Intenção: agendamento dermatológico | Agente ativo: Bina → Luma (Agenda Conectada)',
+    messages: [
+      {
+        type: 'message',
+        role: 'peer',
+        sender: 'Ana Costa',
+        senderTag: 'Paciente · WhatsApp',
+        avatar: 'assets/client-ana.jpg',
+        time: '10:21',
+        content: 'Bom dia! 😊 Gostaria de saber se a Dra. Helena tem horário disponível para avaliação dermatológica ainda nesta semana?'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Bina AI',
+        senderTag: 'Recepção & Triagem',
+        avatar: 'assets/agent-bina.webp',
+        time: '10:21',
+        content: 'Olá, Ana! Muito bom dia! Sou a Bina, assistente da Clínica Santa Helena. Já identifiquei seu cadastro e acionei a Luma para verificar os horários livres da Dra. Helena em tempo real.'
+      },
+      {
+        type: 'event',
+        content: '✨ Bina transferiu o contexto para Luma · Especialista em Agenda (10:22)'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Luma AI',
+        senderTag: 'Agenda & Continuidade',
+        avatar: 'assets/agent-luma.webp',
+        time: '10:22',
+        audio: { duration: '0:16' },
+        content: 'Ana, consultei a agenda conectada da clínica! Temos dois horários livres nesta semana:\n• Quinta-feira às 14h30\n• Sexta-feira às 10h00\nQual desses horários fica melhor para você?'
+      },
+      {
+        type: 'message',
+        role: 'peer',
+        sender: 'Ana Costa',
+        senderTag: 'Paciente · WhatsApp',
+        avatar: 'assets/client-ana.jpg',
+        time: '10:23',
+        content: 'Quinta-feira às 14h30 fica perfeito pra mim!'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Luma AI',
+        senderTag: 'Agenda & Continuidade',
+        avatar: 'assets/agent-luma.webp',
+        time: '10:23',
+        content: 'Perfeito, Ana! ✅ Seu horário de Quinta-feira às 14h30 está pré-reservado. Vou te enviar o lembrete automático 24h antes por aqui.'
+      }
+    ],
     replies: [
-      'Ver exemplo de confirmação da Luma',
-      'Quais dados são solicitados antes de agendar?'
-    ]
+      'Posso enviar foto da carteirinha do convênio?',
+      'Qual o endereço e estacionamento da clínica?',
+      'Preciso levar algum exame anterior?'
+    ],
+    simulatedAnswers: {
+      'Posso enviar foto da carteirinha do convênio?':
+        'Claro, Ana! Pode enviar a foto ou PDF da carteirinha por aqui mesmo. Eu já valido a cobertura e deixo sua ficha pronta na recepção antes de quinta-feira às 14h30.',
+      'Qual o endereço e estacionamento da clínica?':
+        'Estamos na Av. Presidente Vargas, 1420 — Centro, Franca/SP. Contamos com estacionamento próprio conveniado no subsolo com acesso direto ao elevador da clínica.',
+      'Preciso levar algum exame anterior?':
+        'Se você tiver exames laboratoriais dos últimos 6 meses ou a lista de dermocosméticos que usa atualmente, pode trazer ou enviar foto aqui no WhatsApp para anexarmos ao prontuário!'
+    }
   },
   marcos: {
-    name: 'Marcos Lima · Comercial & B2B',
-    temp: 'Oportunidade · Samuel',
-    question: 'Preciso de uma landing page de alta conversão e atendimento com IA para minha empresa.',
-    answer:
-      'Olá, Marcos! O Samuel já organizou seu perfil comercial: podemos unir o desenvolvimento do site com a Bina integrada ao WhatsApp e voz.',
-    context: 'Intenção: projeto comercial | Agente ativo: Samuel (Qualificação)',
+    name: 'Marcos Lima · Rede Varejo & E-commerce',
+    channel: 'WhatsApp Business · +55 (16) 99108-4412 · Lead Qualificado',
+    temp: 'Oportunidade · Samuel SDR',
+    clientName: 'Marcos Lima',
+    clientAvatar: 'assets/client-marcos.webp',
+    agentName: 'Samuel AI',
+    agentRole: 'Qualificação Comercial',
+    agentAvatar: 'assets/agent-samuel.webp',
+    context: 'Intenção: Landing Page + IA Omnichannel | Score Comercial: 94/100 (Quente)',
+    messages: [
+      {
+        type: 'message',
+        role: 'peer',
+        sender: 'Marcos Lima',
+        senderTag: 'Diretor Comercial',
+        avatar: 'assets/client-marcos.webp',
+        time: '10:19',
+        content: 'Olá! Vi o site da Atende Franca e quero estruturar uma landing page de alta conversão integrada ao atendimento com IA no WhatsApp para minha rede de lojas.'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Bina AI',
+        senderTag: 'Recepção Executiva',
+        avatar: 'assets/agent-bina.webp',
+        time: '10:19',
+        content: 'Olá, Marcos! Seja muito bem-vindo à Atende Franca. Excelente iniciativa! Conectei o Samuel, nosso especialista em qualificação comercial, para desenhar o escopo ideal.'
+      },
+      {
+        type: 'event',
+        content: '📊 Samuel qualificou o lead no Pipeline Comercial · Estágio 2 (Quente)'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Samuel AI',
+        senderTag: 'Qualificação & Pipeline',
+        avatar: 'assets/agent-samuel.webp',
+        time: '10:20',
+        content: 'Prazer, Marcos! Aqui é o Samuel. Já estruturei seu card no CRM: unimos a Landing Page de alta conversão com recepção imediata no WhatsApp e distribuição por filial. Quantos atendimentos diários vocês recebem hoje?'
+      },
+      {
+        type: 'message',
+        role: 'peer',
+        sender: 'Marcos Lima',
+        senderTag: 'Diretor Comercial',
+        avatar: 'assets/client-marcos.webp',
+        time: '10:24',
+        content: 'Recebemos cerca de 120 mensagens por dia, mas perdemos muitas vendas à noite e nos finais de semana.'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Samuel AI',
+        senderTag: 'Qualificação & Pipeline',
+        avatar: 'assets/agent-samuel.webp',
+        time: '10:24',
+        content: 'Registrado no resumo executivo! Com a Bina + Luma ativas 24/7, nenhum lead fica sem resposta fora do horário comercial. Podemos agendar seu diagnóstico técnico hoje às 16h?'
+      }
+    ],
     replies: [
-      'Como funciona o escopo de site + IA?',
-      'Encaminhar resumo para especialista'
-    ]
+      'Como funciona o escopo de Landing Page + IA?',
+      'Integra com nosso catálogo e CRM atual?',
+      'Confirmar diagnóstico hoje às 16h'
+    ],
+    simulatedAnswers: {
+      'Como funciona o escopo de Landing Page + IA?':
+        'Desenvolvemos a Landing Page autoral focada em conversão e já conectamos a Bina (voz e texto) + Samuel (qualificação no pipeline) direto ao seu WhatsApp Oficial.',
+      'Integra com nosso catálogo e CRM atual?':
+        'Sim, Marcos! Conectamos via API/Webhook ao seu CRM, ERP e catálogo de produtos para consultar estoque, qualificar a intenção de compra e transferir o pedido pronto para o vendedor.',
+      'Confirmar diagnóstico hoje às 16h':
+        'Excelente! Acionei a Luma e reservamos sua demonstração executiva hoje às 16h00. O resumo técnico das suas 120 demandas/dia já foi entregue ao especialista!'
+    }
   },
   ouvidoria: {
-    name: 'Atendimento ao Cidadão · Órgão Público',
-    temp: 'Protocolo Público · Gov',
-    question: 'Quais documentos preciso apresentar para solicitar certidão ou protocolo na secretaria?',
-    answer:
-      'Olá! De acordo com o guia oficial aprovado pela instituição, informe o tipo de solicitação para consultar a lista de documentos ou abrir encaminhamento à Ouvidoria.',
-    context: 'Fonte: Base documental aprovada (RAG) | Conformidade LGPD & Transparência',
+    name: 'Carlos Eduardo · Cidadão / Ouvidoria',
+    channel: 'Canal Oficial do Cidadão · Protocolo #2026-8841 · Verificado',
+    temp: 'Setor Público · Gov RAG',
+    clientName: 'Carlos Eduardo',
+    clientAvatar: 'assets/client-carlos.webp',
+    agentName: 'Bina AI',
+    agentRole: 'Orientação Pública RAG',
+    agentAvatar: 'assets/agent-bina.webp',
+    context: 'Fonte: Guia Oficial de Serviços & Portaria nº 142/2026 | Conformidade LGPD & WCAG AA',
+    messages: [
+      {
+        type: 'message',
+        role: 'peer',
+        sender: 'Carlos Eduardo',
+        senderTag: 'Cidadão · Canal Oficial',
+        avatar: 'assets/client-carlos.webp',
+        time: '10:16',
+        content: 'Bom dia. Preciso solicitar uma certidão de regularidade fiscal do meu imóvel e abrir um protocolo na Secretaria. Quais documentos preciso apresentar?'
+      },
+      {
+        type: 'event',
+        content: '🛡️ Consulta RAG Homologada · Guia Oficial de Serviços Municipais (Sem Improviso)'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Bina AI',
+        senderTag: 'Atendimento ao Cidadão · Gov',
+        avatar: 'assets/agent-bina.webp',
+        time: '10:17',
+        content: 'Bom dia, Carlos! De acordo com o Guia Oficial da Secretaria da Fazenda, para emissão da Certidão e protocolo digital são necessários:\n1. Documento oficial com foto (RG ou CNH)\n2. Número da Inscrição Municipal (carnê do IPTU)\n3. Comprovante de endereço atualizado.\nDeseja iniciar a triagem do protocolo por aqui?'
+      },
+      {
+        type: 'message',
+        role: 'peer',
+        sender: 'Carlos Eduardo',
+        senderTag: 'Cidadão · Canal Oficial',
+        avatar: 'assets/client-carlos.webp',
+        time: '10:20',
+        content: 'Qual é o prazo de emissão depois que eu enviar os documentos?'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Bina AI',
+        senderTag: 'Atendimento ao Cidadão · Gov',
+        avatar: 'assets/agent-bina.webp',
+        time: '10:20',
+        content: 'Conforme a norma vigente da instituição, a certidão sem pendências é emitida digitalmente em até 24 horas úteis após a conferência do protocolo, com trilha auditável e proteção LGPD.'
+      }
+    ],
     replies: [
-      'Ver requisitos no guia oficial',
-      'Encaminhar ao atendimento presencial/humano'
-    ]
+      'Gerar número de pré-protocolo agora',
+      'Quais os horários de atendimento presencial?',
+      'Encaminhar para servidor da Ouvidoria'
+    ],
+    simulatedAnswers: {
+      'Gerar número de pré-protocolo agora':
+        'Pré-protocolo #GOV-2026-8841 gerado com transparência! Sua solicitação foi classificada para a Secretaria da Fazenda com todos os requisitos documentais anexados.',
+      'Quais os horários de atendimento presencial?':
+        'O atendimento presencial no Paço e nas regionais funciona de segunda a sexta-feira, das 8h00 às 17h00, mediante agendamento prévio ou protocolo digital.',
+      'Encaminhar para servidor da Ouvidoria':
+        'Transferência iniciada! O servidor responsável pela Ouvidoria recebeu o histórico completo e o número do protocolo para dar continuidade sem que você precise repetir seus dados.'
+    }
   },
   julia: {
-    name: 'Júlia Souza · Continuidade Humana',
-    temp: 'Encaminhado · Equipe',
-    question: 'Tenho uma demanda específica de contrato e gostaria de falar com a equipe.',
-    answer:
-      'Claro, Júlia! Já registrei o resumo da sua solicitação para que nossa equipe assuma a conversa sem que você precise repetir informações.',
-    context: 'Intenção: atendimento humano | Handoff com contexto completo',
+    name: 'Júlia Souza · Diretoria & Contratos',
+    channel: 'WhatsApp Corporativo · +55 (16) 99712-3090 · Atendimento Executivo',
+    temp: 'Handoff · Com Equipe',
+    clientName: 'Júlia Souza',
+    clientAvatar: 'assets/client-julia.jpg',
+    agentName: 'Equipe Atende Franca',
+    agentRole: 'Consultor Humano + IA',
+    agentAvatar: 'assets/portrait.webp',
+    context: 'Intenção: Contrato Corporativo (4 Unidades) | Handoff Humano com Resumo Completo',
+    messages: [
+      {
+        type: 'message',
+        role: 'peer',
+        sender: 'Júlia Souza',
+        senderTag: 'Diretora Operacional',
+        avatar: 'assets/client-julia.jpg',
+        time: '10:14',
+        content: 'Olá! Estamos com a minuta de implantação para nossas 4 unidades e gostaria de alinhar uma cláusula específica de SLA e treinamento com o especialista responsável.'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        sender: 'Bina AI',
+        senderTag: 'Recepção & Governança',
+        avatar: 'assets/agent-bina.webp',
+        time: '10:14',
+        content: 'Olá, Júlia! Como sua solicitação envolve revisão contratual sob medida para as 4 unidades, já organizei o resumo executivo e transferi a conversa para nossa equipe humana.'
+      },
+      {
+        type: 'event',
+        content: '🤝 Handoff Humano Concluído · Contexto + Histórico entregues ao Consultor Executivo (10:15)'
+      },
+      {
+        type: 'message',
+        role: 'self',
+        isHuman: true,
+        sender: 'Consultor Executivo',
+        senderTag: 'Equipe Humana · Atende Franca',
+        avatar: 'assets/portrait.webp',
+        time: '10:18',
+        content: 'Bom dia, Júlia! Recebi o resumo completo preparado pela Bina e pelo Samuel sobre as 4 unidades. Já incluímos o SLA prioritário e o cronograma de treinamento presencial em Franca. Podemos validar a minuta?'
+      }
+    ],
     replies: [
-      'Simular resposta do operador humano',
-      'Visualizar resumo entregue à equipe'
-    ]
+      'Visualizar resumo entregue à equipe humana',
+      'Como funciona o treinamento da nossa equipe?',
+      'Aprovar minuta e agendar kick-off'
+    ],
+    simulatedAnswers: {
+      'Visualizar resumo entregue à equipe humana':
+        '📋 [Resumo Handoff Bina → Equipe]: Cliente Júlia Souza (4 unidades) | Escopo: Suíte Omnichannel + Voz + Portal | Ponto focal: Cláusula de SLA prioritário e onboarding assistido.',
+      'Como funciona o treinamento da nossa equipe?':
+        'Realizamos o onboarding prático com seus operadores para mostrar como assumir conversas com 1 clique, consultar o pipeline do Samuel e atualizar a base de conhecimento.',
+      'Aprovar minuta e agendar kick-off':
+        'Maravilha, Júlia! Minuta validada com sucesso. A Luma já enviou os convites da reunião de kick-off técnico para sua diretoria!'
+    }
   }
 };
 
 let currentInboxKey = 'ana';
 let humanTakeoverActive = false;
+let activeStreamTimer = null;
+let isChatStreaming = false;
+let userScrollInterrupted = false;
+
+function formatCurrentTime() {
+  const now = new Date();
+  return now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+}
+
+function setStreamingUIState(streaming) {
+  isChatStreaming = streaming;
+  const submitBtn = document.querySelector('#inbox-chat-submit');
+  const arrowIcon = submitBtn?.querySelector('.icon-send-arrow');
+  const stopIcon = submitBtn?.querySelector('.icon-stop-square');
+  if (submitBtn) {
+    submitBtn.classList.toggle('is-streaming', streaming);
+    submitBtn.setAttribute('aria-label', streaming ? 'Parar resposta em tempo real' : 'Enviar mensagem');
+  }
+  if (arrowIcon) arrowIcon.hidden = streaming;
+  if (stopIcon) stopIcon.hidden = !streaming;
+}
+
+function abortActiveStream() {
+  if (activeStreamTimer) {
+    clearTimeout(activeStreamTimer);
+    activeStreamTimer = null;
+  }
+  setStreamingUIState(false);
+}
+
+function scrollChatViewportToBottom(behavior = 'smooth') {
+  const viewport = document.querySelector('#inbox-viewport');
+  if (!viewport || userScrollInterrupted) return;
+  viewport.scrollTo({ top: viewport.scrollHeight, behavior });
+}
+
+function createChatMessageElement(msg) {
+  if (msg.type === 'event') {
+    const evDiv = document.createElement('div');
+    evDiv.className = 'af-chat-event';
+    evDiv.innerHTML = `<span class="dot"></span> <span>${msg.content}</span>`;
+    return { row: evDiv, textEl: null };
+  }
+
+  const row = document.createElement('div');
+  row.className = 'af-chat-row' + (msg.isHuman ? ' is-human-reply' : '');
+  row.setAttribute('data-variant', msg.role || 'peer');
+
+  const avatarWrap = document.createElement('div');
+  avatarWrap.className = 'af-chat-avatar';
+  const avatarImg = document.createElement('img');
+  avatarImg.src = msg.avatar || 'assets/agent-bina.webp';
+  avatarImg.alt = msg.sender || 'Participante';
+  avatarImg.loading = 'lazy';
+  avatarWrap.appendChild(avatarImg);
+
+  const bubble = document.createElement('div');
+  bubble.className = 'af-chat-bubble';
+
+  const senderHeader = document.createElement('div');
+  senderHeader.className = 'af-bubble-sender';
+  const senderStrong = document.createElement('strong');
+  senderStrong.textContent = msg.sender || (msg.role === 'peer' ? 'Cliente' : 'Bina AI');
+  const senderBadge = document.createElement('span');
+  senderBadge.textContent = msg.senderTag || '';
+  senderHeader.append(senderStrong, senderBadge);
+
+  const textEl = document.createElement('div');
+  textEl.className = 'af-bubble-text';
+  textEl.textContent = msg.content || '';
+
+  bubble.append(senderHeader, textEl);
+
+  if (msg.audio) {
+    const audioBox = document.createElement('div');
+    audioBox.className = 'af-chat-audio';
+    audioBox.innerHTML = `
+      <button type="button" class="af-chat-audio-btn" aria-label="Ouvir nota de voz da IA">▶</button>
+      <div class="af-chat-audio-bars" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <span class="af-chat-audio-time">${msg.audio.duration || '0:15'}</span>
+    `;
+    const playBtn = audioBox.querySelector('.af-chat-audio-btn');
+    playBtn?.addEventListener('click', () => {
+      playVoiceChime(580);
+      const playing = audioBox.classList.toggle('is-playing');
+      playBtn.textContent = playing ? '❚❚' : '▶';
+      if (playing) {
+        setTimeout(() => {
+          audioBox.classList.remove('is-playing');
+          playBtn.textContent = '▶';
+        }, 3200);
+      }
+    });
+    bubble.appendChild(audioBox);
+  }
+
+  const timeEl = document.createElement('time');
+  timeEl.className = 'af-chat-time';
+  if (msg.role === 'self') {
+    timeEl.innerHTML = `${msg.time || formatCurrentTime()} <span class="wa-checks" aria-label="Entregue e lido">✓✓</span>`;
+    row.append(timeEl, bubble, avatarWrap);
+  } else {
+    timeEl.textContent = msg.time || formatCurrentTime();
+    row.append(avatarWrap, bubble, timeEl);
+  }
+
+  return { row, textEl };
+}
+
+// 21st.dev useStreamToken implementation in vanilla JS
+function streamAssistantReply(textEl, fullText, minDelay = 24, maxDelay = 58) {
+  abortActiveStream();
+  const tokens = fullText.split(/(\s+)/).filter(Boolean);
+  let tokenIndex = 0;
+  setStreamingUIState(true);
+  userScrollInterrupted = false;
+
+  const step = () => {
+    if (tokenIndex >= tokens.length) {
+      setStreamingUIState(false);
+      activeStreamTimer = null;
+      return;
+    }
+    tokenIndex++;
+    textEl.textContent = tokens.slice(0, tokenIndex).join('');
+    scrollChatViewportToBottom('smooth');
+    const delay = minDelay + Math.random() * (maxDelay - minDelay);
+    activeStreamTimer = setTimeout(step, delay);
+  };
+
+  step();
+}
+
+function submitCustomerMessage(messageText) {
+  const trimmed = (messageText || '').trim();
+  if (!trimmed) return;
+
+  abortActiveStream();
+  const item = inboxExamples[currentInboxKey] || inboxExamples.ana;
+  const container = document.querySelector('#inbox-messages');
+  if (!container) return;
+
+  playVoiceChime(520);
+  userScrollInterrupted = false;
+
+  // 1. Append Customer (peer) message row with customer photo
+  const userMsg = {
+    type: 'message',
+    role: 'peer',
+    sender: item.clientName,
+    senderTag: 'Cliente · WhatsApp',
+    avatar: item.clientAvatar,
+    time: formatCurrentTime(),
+    content: trimmed
+  };
+  const { row: userRow } = createChatMessageElement(userMsg);
+  container.appendChild(userRow);
+  scrollChatViewportToBottom('smooth');
+
+  // 2. Determine AI or Human response text
+  let replyText = item.simulatedAnswers?.[trimmed];
+  if (!replyText) {
+    replyText = humanTakeoverActive
+      ? `Perfeito, ${item.clientName.split(' ')[0]}! Aqui é da equipe executiva da Atende Franca. Recebi sua mensagem ("${trimmed}") junto ao histórico organizado pela IA e já estou dando andamento imediato.`
+      : `Recebido, ${item.clientName.split(' ')[0]}! Consultei as regras aprovadas do projeto para responder sobre "${trimmed}" com precisão e já atualizei o status da sua solicitação no painel.`;
+  } else if (humanTakeoverActive) {
+    replyText = `[Atendimento Humano Assumido]: ${replyText}`;
+  }
+
+  // 3. Append Assistant / Human (self) message row and stream tokens with typewriter effect
+  const assistantMsg = {
+    type: 'message',
+    role: 'self',
+    isHuman: humanTakeoverActive,
+    sender: humanTakeoverActive ? 'Equipe Humana · Atende Franca' : item.agentName,
+    senderTag: humanTakeoverActive ? 'Operador no Controle' : item.agentRole,
+    avatar: humanTakeoverActive ? 'assets/portrait.webp' : item.agentAvatar,
+    time: formatCurrentTime(),
+    content: ''
+  };
+  const { row: assistantRow, textEl } = createChatMessageElement(assistantMsg);
+  container.appendChild(assistantRow);
+  scrollChatViewportToBottom('smooth');
+
+  if (textEl) {
+    streamAssistantReply(textEl, replyText);
+  }
+}
 
 function renderInboxConversation(key) {
+  abortActiveStream();
   currentInboxKey = key;
   const item = inboxExamples[key] || inboxExamples.ana;
   const nameEl = document.querySelector('#inbox-name');
+  const channelEl = document.querySelector('#inbox-channel');
+  const headerAvatarEl = document.querySelector('#inbox-header-avatar');
   const tempEl = document.querySelector('#inbox-temp');
   const contextEl = document.querySelector('#inbox-context');
   const container = document.querySelector('#inbox-messages');
   const quickRepliesEl = document.querySelector('#inbox-quick-replies');
 
   if (nameEl) nameEl.textContent = item.name;
+  if (channelEl) channelEl.textContent = item.channel;
+  if (headerAvatarEl) {
+    headerAvatarEl.src = item.clientAvatar;
+    headerAvatarEl.alt = item.clientName;
+  }
   if (tempEl) tempEl.textContent = item.temp;
   if (contextEl) contextEl.textContent = item.context;
 
   if (container) {
     container.replaceChildren();
-    [item.question, item.answer].forEach((text, i) => {
-      const bubble = document.createElement('div');
-      bubble.className = 'bubble ' + (i ? 'assistant' : 'customer');
-      bubble.textContent = text;
-      container.append(bubble);
+    (item.messages || []).forEach((msg) => {
+      const { row } = createChatMessageElement(msg);
+      container.appendChild(row);
     });
+    userScrollInterrupted = false;
+    requestAnimationFrame(() => scrollChatViewportToBottom('instant'));
   }
 
   if (quickRepliesEl) {
@@ -316,21 +741,63 @@ function renderInboxConversation(key) {
       btn.type = 'button';
       btn.textContent = replyText;
       btn.addEventListener('click', () => {
-        if (!container) return;
-        const userBubble = document.createElement('div');
-        userBubble.className = 'bubble customer';
-        userBubble.textContent = replyText;
-        const respBubble = document.createElement('div');
-        respBubble.className = 'bubble assistant';
-        respBubble.textContent = humanTakeoverActive
-          ? '[Equipe Humana — Simulação]: Recebemos o contexto completo da Bina e damos sequência imediata ao atendimento.'
-          : '[Demonstração Bina AI]: Em produção, esta etapa consulta a regra aprovada do projeto e registra a ação no painel.';
-        container.append(userBubble, respBubble);
-        container.scrollTop = container.scrollHeight;
+        submitCustomerMessage(replyText);
       });
       quickRepliesEl.append(btn);
     });
   }
+}
+
+// Track user scroll interruption on ChatViewport (21st.dev useUserInterruption pattern)
+const inboxViewport = document.querySelector('#inbox-viewport');
+if (inboxViewport) {
+  const onUserScrollInterrupt = () => {
+    if (isChatStreaming) {
+      const { scrollTop, scrollHeight, clientHeight } = inboxViewport;
+      if (scrollHeight - scrollTop - clientHeight > 36) {
+        userScrollInterrupted = true;
+      }
+    }
+  };
+  inboxViewport.addEventListener('wheel', onUserScrollInterrupt, { passive: true });
+  inboxViewport.addEventListener('touchstart', onUserScrollInterrupt, { passive: true });
+}
+
+// Wire 21st.dev ChatInputArea form & multiline Enter-to-send
+const inboxChatForm = document.querySelector('#inbox-chat-form');
+const inboxChatInput = document.querySelector('#inbox-chat-input');
+const inboxChatSubmit = document.querySelector('#inbox-chat-submit');
+
+if (inboxChatInput) {
+  inboxChatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey && !e.defaultPrevented) {
+      e.preventDefault();
+      inboxChatForm?.requestSubmit();
+    }
+  });
+}
+
+if (inboxChatSubmit) {
+  inboxChatSubmit.addEventListener('click', (e) => {
+    if (isChatStreaming) {
+      e.preventDefault();
+      abortActiveStream();
+    }
+  });
+}
+
+if (inboxChatForm) {
+  inboxChatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (isChatStreaming) {
+      abortActiveStream();
+      return;
+    }
+    const val = inboxChatInput?.value || '';
+    if (!val.trim()) return;
+    if (inboxChatInput) inboxChatInput.value = '';
+    submitCustomerMessage(val);
+  });
 }
 
 document.querySelectorAll('[data-inbox]').forEach((button) =>
@@ -354,8 +821,20 @@ if (takeoverBtn) {
     const composeLabel = document.querySelector('#inbox-compose-label');
     if (composeLabel) {
       composeLabel.textContent = humanTakeoverActive
-        ? 'Modo Operador Humano ativo · IA pausada nesta conversa'
-        : 'Modo Assistente IA ativo · Clique nas sugestões acima para simular';
+        ? 'Operador Humano Ativo'
+        : 'IA Ativa · Streaming';
+    }
+    const container = document.querySelector('#inbox-messages');
+    if (container) {
+      const { row } = createChatMessageElement({
+        type: 'event',
+        content: humanTakeoverActive
+          ? '👤 Operador humano assumiu a conversa com histórico completo · IA em modo copiloto'
+          : '✨ Assistente IA (Bina + Samuel + Luma) reativada na conversa'
+      });
+      container.appendChild(row);
+      userScrollInterrupted = false;
+      scrollChatViewportToBottom('smooth');
     }
   });
 }

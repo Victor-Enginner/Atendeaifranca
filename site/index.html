@@ -1036,69 +1036,141 @@
           <span class="demo-tag">SIMULAÇÃO INTERATIVA</span>
         </div>
 
-        <!-- PANEL 1: INBOX OMNICHANNEL -->
+        <!-- PANEL 1: INBOX OMNICHANNEL (21st.dev Chat Architecture + WhatsApp Business Suite) -->
         <div class="inbox-content" data-suite-panel="inbox">
           <aside class="inbox-sidebar">
             <span class="inbox-monogram"><i data-icon="brand"></i></span>
-            <span class="active"><i data-icon="messages"></i></span>
-            <span><i data-icon="people"></i></span>
-            <span><i data-icon="calendar"></i></span>
-            <span><i data-icon="gov"></i></span>
+            <span class="active" title="Conversas WhatsApp &amp; Omnichannel"><i data-icon="messages"></i></span>
+            <span title="Contatos &amp; Leads"><i data-icon="people"></i></span>
+            <span title="Agenda Conectada (Luma)"><i data-icon="calendar"></i></span>
+            <span title="Protocolos &amp; Governança"><i data-icon="gov"></i></span>
           </aside>
 
           <div class="inbox-list">
-            <h3>Conversas <span>04</span></h3>
+            <div class="inbox-list-header">
+              <h3>Conversas <span>04</span></h3>
+              <span class="inbox-wa-pill"><span class="dot"></span> WhatsApp API</span>
+            </div>
+
             <button type="button" class="inbox-person selected" data-inbox="ana" aria-pressed="true">
-              <span class="initial-avatar">AC</span>
-              <span><strong>Ana Costa</strong><small>Clínica · Horários da semana</small></span>
-              <time>Agora</time>
+              <span class="inbox-avatar-wrap">
+                <img src="assets/client-ana.jpg" alt="Ana Costa" width="44" height="44" loading="lazy">
+                <b class="inbox-status-dot is-online" title="Online no WhatsApp"></b>
+              </span>
+              <span class="inbox-person-body">
+                <strong>Ana Costa <em class="inbox-sector-tag">Saúde</em></strong>
+                <small>✓✓ Quinta-feira às 14h30 fica perfeito...</small>
+              </span>
+              <span class="inbox-person-meta">
+                <time>Agora</time>
+                <b class="inbox-unread-badge">Luma</b>
+              </span>
             </button>
+
             <button type="button" class="inbox-person" data-inbox="marcos" aria-pressed="false">
-              <span class="initial-avatar blue">ML</span>
-              <span><strong>Marcos Lima</strong><small>Comercial · Site + IA</small></span>
-              <time>10:24</time>
+              <span class="inbox-avatar-wrap">
+                <img src="assets/client-marcos.webp" alt="Marcos Lima" width="44" height="44" loading="lazy">
+                <b class="inbox-status-dot is-online" title="Online no WhatsApp"></b>
+              </span>
+              <span class="inbox-person-body">
+                <strong>Marcos Lima <em class="inbox-sector-tag">Comercial</em></strong>
+                <small>✓✓ Recebemos ~120 mensagens por dia...</small>
+              </span>
+              <span class="inbox-person-meta">
+                <time>10:24</time>
+                <b class="inbox-unread-badge is-samuel">Samuel</b>
+              </span>
             </button>
+
             <button type="button" class="inbox-person" data-inbox="ouvidoria" aria-pressed="false">
-              <span class="initial-avatar" style="background:#d9ece8;color:#1b5e5a">OP</span>
-              <span><strong>Cidadão / Ouvidoria</strong><small>Setor Público · Protocolo</small></span>
-              <time>10:20</time>
+              <span class="inbox-avatar-wrap">
+                <img src="assets/client-carlos.webp" alt="Carlos Eduardo · Ouvidoria" width="44" height="44" loading="lazy">
+                <b class="inbox-status-dot is-gov" title="Canal Cidadão"></b>
+              </span>
+              <span class="inbox-person-body">
+                <strong>Carlos Eduardo <em class="inbox-sector-tag is-gov">Gov</em></strong>
+                <small>✓✓ Certidão e protocolo na Secretaria...</small>
+              </span>
+              <span class="inbox-person-meta">
+                <time>10:20</time>
+                <b class="inbox-unread-badge is-bina">Bina RAG</b>
+              </span>
             </button>
+
             <button type="button" class="inbox-person" data-inbox="julia" aria-pressed="false">
-              <span class="initial-avatar terra">JS</span>
-              <span><strong>Júlia Souza</strong><small>Encaminhamento humano</small></span>
-              <time>10:18</time>
+              <span class="inbox-avatar-wrap">
+                <img src="assets/client-julia.jpg" alt="Júlia Souza" width="44" height="44" loading="lazy">
+                <b class="inbox-status-dot is-online" title="Em atendimento humano"></b>
+              </span>
+              <span class="inbox-person-body">
+                <strong>Júlia Souza <em class="inbox-sector-tag is-human">Contrato</em></strong>
+                <small>✓✓ Minuta corporativa para 4 unidades...</small>
+              </span>
+              <span class="inbox-person-meta">
+                <time>10:18</time>
+                <b class="inbox-unread-badge is-team">Equipe</b>
+              </span>
             </button>
+
             <div class="inbox-note">
               <i data-icon="spark"></i>
-              <p>O resumo e a intenção acompanham cada conversa.</p>
+              <p>O resumo, os dados do lead e a intenção acompanham cada conversa em tempo real.</p>
             </div>
           </div>
 
-          <div class="inbox-chat">
+          <div class="inbox-chat af-chat-root">
             <div class="chat-person">
-              <strong id="inbox-name">Ana Costa · Clínica &amp; Saúde</strong>
+              <div class="chat-person-identity">
+                <span class="chat-header-avatar-wrap">
+                  <img id="inbox-header-avatar" src="assets/client-ana.jpg" alt="Ana Costa" width="42" height="42">
+                  <b class="inbox-status-dot is-online"></b>
+                </span>
+                <div class="chat-person-titles">
+                  <strong id="inbox-name">Ana Costa · Clínica &amp; Saúde</strong>
+                  <small id="inbox-channel">WhatsApp Oficial · +55 (16) 99241-8830 · Online agora</small>
+                </div>
+              </div>
               <span class="lead-temp-badge" id="inbox-temp">Quente · Agenda</span>
               <button type="button" class="human-takeover-btn" id="takeover-toggle" aria-pressed="false">
                 Assumir conversa como humano
               </button>
             </div>
 
-            <div id="inbox-messages">
-              <div class="bubble customer">Olá! Quero saber como consultar os horários de atendimento desta semana.</div>
-              <div class="bubble assistant">Olá, Ana! Sou a Bina. Numa agenda conectada ao projeto, a Luma verifica os horários livres e confirma sua preferência em segundos.</div>
+            <!-- 21st.dev ChatViewport & ChatMessages -->
+            <div class="af-chat-viewport" id="inbox-viewport" role="log" aria-live="polite">
+              <div class="af-chat-messages" id="inbox-messages">
+                <!-- Populated dynamically by renderInboxConversation() in enhancements.js -->
+              </div>
             </div>
 
             <div class="chat-context">
               <i data-icon="spark"></i>
-              <span id="inbox-context">Intenção: agendamento | Agente ativo: Bina → Luma</span>
+              <span id="inbox-context">Intenção: agendamento dermatológico | Agente ativo: Bina → Luma (Agenda Conectada)</span>
             </div>
 
             <div class="inbox-quick-replies" id="inbox-quick-replies" aria-label="Simular próxima mensagem"></div>
 
-            <div class="chat-compose">
-              <span id="inbox-compose-label">Modo Assistente IA ativo · Clique nas sugestões acima para simular</span>
-              <i data-icon="send"></i>
-            </div>
+            <!-- 21st.dev ChatInputArea + ChatInputField + ChatInputSubmit -->
+            <form class="af-chat-input-area" id="inbox-chat-form" autocomplete="off">
+              <textarea
+                class="af-chat-input-field"
+                id="inbox-chat-input"
+                name="message"
+                rows="1"
+                placeholder="Digite uma mensagem como cliente ou clique numa sugestão acima..."
+                aria-label="Digite uma mensagem para testar o chat"
+              ></textarea>
+              <span class="af-chat-mode-hint" id="inbox-compose-label">IA Ativa · Streaming</span>
+              <button type="submit" class="af-chat-submit-btn" id="inbox-chat-submit" aria-label="Enviar mensagem">
+                <svg class="icon-send-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m5 12 7-7 7 7"/>
+                  <path d="M12 19V5"/>
+                </svg>
+                <svg class="icon-stop-square" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" hidden>
+                  <rect x="6" y="6" width="12" height="12" rx="2"/>
+                </svg>
+              </button>
+            </form>
           </div>
         </div>
 
@@ -1113,12 +1185,18 @@
                 <div class="pipeline-col">
                   <h4>1. Triagem Bina <span>02</span></h4>
                   <div class="pipeline-item">
-                    <strong>Clínica Santa Helena</strong>
+                    <div class="pipeline-item-head">
+                      <img src="assets/client-ana.jpg" alt="Clínica Santa Helena" width="26" height="26" loading="lazy">
+                      <strong>Clínica Santa Helena</strong>
+                    </div>
                     <small>Dúvida sobre recepção e agenda</small>
                     <span>Recepção IA</span>
                   </div>
                   <div class="pipeline-item">
-                    <strong>Portal Municipal</strong>
+                    <div class="pipeline-item-head">
+                      <img src="assets/client-carlos.webp" alt="Carlos Eduardo · Portal Municipal" width="26" height="26" loading="lazy">
+                      <strong>Portal Municipal</strong>
+                    </div>
                     <small>Consulta sobre triagem de ouvidoria</small>
                     <span>Setor Público</span>
                   </div>
@@ -1126,12 +1204,18 @@
                 <div class="pipeline-col">
                   <h4>2. Qualificado <span>02</span></h4>
                   <div class="pipeline-item">
-                    <strong>Marcos Lima · Varejo</strong>
+                    <div class="pipeline-item-head">
+                      <img src="assets/client-marcos.webp" alt="Marcos Lima" width="26" height="26" loading="lazy">
+                      <strong>Marcos Lima · Varejo</strong>
+                    </div>
                     <small>Landing page + atendimento WhatsApp</small>
                     <span>Quente · Samuel</span>
                   </div>
                   <div class="pipeline-item">
-                    <strong>Rede Odonto Franca</strong>
+                    <div class="pipeline-item-head">
+                      <img src="assets/agent-luma.webp" alt="Rede Odonto Franca" width="26" height="26" loading="lazy">
+                      <strong>Rede Odonto Franca</strong>
+                    </div>
                     <small>Confirmação de horários com Luma</small>
                     <span>Morno · Samuel</span>
                   </div>
@@ -1139,16 +1223,22 @@
                 <div class="pipeline-col">
                   <h4>3. Agenda Luma <span>01</span></h4>
                   <div class="pipeline-item">
-                    <strong>Ana Costa</strong>
-                    <small>Reunião de diagnóstico solicitada</small>
-                    <span>Horário sugerido</span>
+                    <div class="pipeline-item-head">
+                      <img src="assets/client-ana.jpg" alt="Ana Costa" width="26" height="26" loading="lazy">
+                      <strong>Ana Costa</strong>
+                    </div>
+                    <small>Horário reservado · Quinta 14h30</small>
+                    <span>Confirmado · Luma</span>
                   </div>
                 </div>
                 <div class="pipeline-col">
                   <h4>4. Com Equipe <span>01</span></h4>
                   <div class="pipeline-item">
-                    <strong>Júlia Souza</strong>
-                    <small>Análise de contrato sob medida</small>
+                    <div class="pipeline-item-head">
+                      <img src="assets/client-julia.jpg" alt="Júlia Souza" width="26" height="26" loading="lazy">
+                      <strong>Júlia Souza</strong>
+                    </div>
+                    <small>Análise de contrato · 4 unidades</small>
                     <span>Handoff Humano</span>
                   </div>
                 </div>
@@ -1235,68 +1325,644 @@
     </div>
   </section>
 
-  <!-- GALERIA DE CENÁRIOS E APLICAÇÕES -->
-  <section class="commercial-cases wrap section" id="aplicacoes">
-    <div class="case-heading">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> SEUS CENÁRIOS. SUA OPERAÇÃO.</div>
-        <h2>Veja onde a conversa<br><em>pode chegar.</em></h2>
-      </div>
-      <div class="case-navigation" aria-label="Cenários de aplicação">
-        <button type="button" data-case="atendimento" aria-pressed="true">Atendimento</button>
-        <button type="button" data-case="agenda" aria-pressed="false">Agenda</button>
-        <button type="button" data-case="vendas" aria-pressed="false">Comercial &amp; Vendas</button>
-        <button type="button" data-case="voz" aria-pressed="false">Voz &amp; 3D</button>
-        <button type="button" data-case="governo" aria-pressed="false">Institucional &amp; Gov</button>
+  <!-- GALERIA DE CENÁRIOS E APLICAÇÕES (21st.dev 3D Scroll-Driven Animated Gallery) -->
+  <section class="commercial-cases af-animated-gallery-section" id="aplicacoes">
+    <div class="wrap">
+      <!-- 21st.dev ContainerStagger + ContainerAnimated Header -->
+      <div class="af-gallery-stagger" id="af-gallery-stagger">
+        <div class="af-gallery-animated">
+          <div class="eyebrow" style="justify-content:center;margin-inline:auto"><span class="dot"></span> SEUS CENÁRIOS. SUA OPERAÇÃO.</div>
+        </div>
+        <div class="af-gallery-animated">
+          <h2 class="af-gallery-title">
+            Veja onde a conversa<br>
+            <em>pode chegar.</em>
+          </h2>
+        </div>
+        <div class="af-gallery-animated">
+          <p class="af-gallery-subtitle">
+            Sem perda de tempo nem canais desconectados: explore nossa coleção de cenários reais — do WhatsApp e Bina Voice ao Pipeline Comercial do Samuel, Agenda da Luma e Portais Públicos.
+          </p>
+        </div>
+
+        <div class="af-gallery-animated af-gallery-cta-row">
+          <a href="#conversa" class="button primary magnetic af-gallery-main-btn">
+            Agendar demonstração ao vivo
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/>
+              <rect x="2" y="6" width="14" height="12" rx="2"/>
+            </svg>
+          </a>
+          <a href="#central" class="af-gallery-link-btn">Testar suíte interativa <i data-icon="arrow"></i></a>
+        </div>
+
+        <!-- Interactive Category Filter Pills -->
+        <div class="af-gallery-animated case-navigation" aria-label="Filtrar cenários de aplicação">
+          <button type="button" data-case="todos" aria-pressed="true">Todos os Cenários (12)</button>
+          <button type="button" data-case="atendimento" aria-pressed="false">Atendimento</button>
+          <button type="button" data-case="agenda" aria-pressed="false">Agenda &amp; Luma</button>
+          <button type="button" data-case="vendas" aria-pressed="false">Comercial &amp; Vendas</button>
+          <button type="button" data-case="voz" aria-pressed="false">Voz &amp; 3D</button>
+          <button type="button" data-case="governo" aria-pressed="false">Institucional &amp; Gov</button>
+        </div>
+
+        <!-- Active Scenario Context Bar -->
+        <div class="af-gallery-animated af-case-context-bar">
+          <span class="af-case-pill" id="case-label">COLEÇÃO COMPLETA · 12 CENÁRIOS</span>
+          <strong id="case-title">Role para explorar a galeria 3D ou clique em qualquer cena para ampliar em tela cheia.</strong>
+          <span id="case-description" hidden>Mensagens, informações e próximos passos apresentados com a identidade do seu negócio ou instituição.</span>
+        </div>
       </div>
     </div>
 
-    <div class="case-layout">
-      <div>
-        <img id="case-image" src="assets/mobile-commerce.webp" width="1200" height="675" alt="Conceito de atendimento da Atende Franca no smartphone" loading="lazy">
-        <span class="source-label">CONCEITO VISUAL AUTORAL · CENÁRIO ILUSTRATIVO</span>
-      </div>
-      <div class="case-details">
-        <div class="eyebrow" id="case-label">ATENDIMENTO COM CONTEXTO</div>
-        <h3 id="case-title">Seu cliente ou cidadão tem uma dúvida. A conversa começa.</h3>
-        <p id="case-description">Mensagens, informações e próximos passos apresentados com a identidade do seu negócio ou instituição.</p>
-        <div class="case-actions">
-          <button type="button" data-direction="prev" aria-label="Imagem anterior do cenário"><i data-icon="arrow"></i></button>
-          <span class="case-counter" id="case-counter">1 / 3</span>
-          <button type="button" data-direction="next" aria-label="Próxima imagem do cenário"><i data-icon="arrow"></i></button>
+    <!-- Ambient Emerald/Teal Glow (21st.dev blur glow adapted to Atende Franca palette) -->
+    <div class="af-gallery-ambient-glow" aria-hidden="true"></div>
+
+    <!-- 21st.dev ContainerScroll + ContainerSticky + GalleryContainer + 3 GalleryCols -->
+    <div class="af-container-scroll" id="af-gallery-scroll">
+      <div class="af-container-sticky">
+        <div class="af-gallery-container" id="af-gallery-3d">
+          <!-- Column 1: yRange ["-10%", "2%"] -->
+          <div class="af-gallery-col af-col-1" id="af-gallery-col-1">
+            <figure class="af-gallery-item" data-gallery-cat="atendimento" data-agent-image="mobile-commerce" data-agent-title="Atendimento em Tempo Real no WhatsApp + Áudio IA">
+              <img src="assets/mobile-commerce.webp" width="1200" height="675" alt="Atendimento em Tempo Real no WhatsApp + Áudio IA" loading="lazy">
+              <figcaption>
+                <span>ATENDIMENTO · WHATSAPP</span>
+                <strong>Seu cliente não espera. Sua IA também não.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="agenda" data-agent-image="agenda-reference" data-agent-title="Confirmação de Agenda e Horários com a Luma">
+              <img src="assets/agenda-reference.webp" width="1200" height="675" alt="Confirmação de Agenda e Horários com a Luma" loading="lazy">
+              <figcaption>
+                <span>AGENDA · LUMA AI</span>
+                <strong>Do primeiro contato ao horário confirmado.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="governo" data-agent-image="knowledge" data-agent-title="Base de Conhecimento Verificada (RAG) & Governança">
+              <img src="assets/knowledge.webp" width="1200" height="675" alt="Base de Conhecimento Verificada (RAG) e Governança" loading="lazy">
+              <figcaption>
+                <span>INSTITUCIONAL &amp; GOV · RAG</span>
+                <strong>Respostas fiéis a documentos e normas oficiais.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="atendimento" data-agent-image="chat-reference" data-agent-title="Experiência de Conversa em Liquid Glass com a Bina">
+              <img src="assets/chat-reference.webp" width="1200" height="675" alt="Experiência de Conversa em Liquid Glass com a Bina" loading="lazy">
+              <figcaption>
+                <span>RECEPÇÃO · LIQUID GLASS</span>
+                <strong>Acolhimento natural com contexto completo.</strong>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Column 2: yRange ["15%", "-5%"] (Center Counter-Scroll Column) -->
+          <div class="af-gallery-col af-col-2" id="af-gallery-col-2">
+            <figure class="af-gallery-item" data-gallery-cat="atendimento" data-agent-image="inbox" data-agent-title="Sua Caixa de Entrada Unificada com Inteligência Artificial">
+              <img src="assets/inbox.webp" width="1200" height="675" alt="Caixa de Entrada Unificada com Inteligência Artificial" loading="lazy">
+              <figcaption>
+                <span>CENTRAL OMNICHANNEL</span>
+                <strong>Sua caixa de entrada. Com saída para tudo.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="vendas" data-agent-image="samuel-reference" data-agent-title="Samuel no Pipeline de Qualificação Comercial">
+              <img src="assets/samuel-reference.webp" width="1200" height="675" alt="Samuel no Pipeline de Qualificação Comercial" loading="lazy">
+              <figcaption>
+                <span>COMERCIAL · SAMUEL SDR</span>
+                <strong>Cada oportunidade qualificada por estágio.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="voz" data-agent-image="robot-phone" data-agent-title="Bina Voice 3D — Presença por Voz no Smartphone">
+              <img src="assets/robot-phone.webp" width="1200" height="675" alt="Bina Voice 3D — Presença por Voz no Smartphone" loading="lazy">
+              <figcaption>
+                <span>VOZ &amp; 3D · BINA VOICE</span>
+                <strong>Experiência falada natural a um toque.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="vendas" data-agent-image="people-reference" data-agent-title="Pessoas no Centro, IA ao seu Lado — Equipe Atende Franca">
+              <img src="assets/people-reference.webp" width="1200" height="675" alt="Pessoas no Centro, IA ao seu Lado" loading="lazy">
+              <figcaption>
+                <span>OPERAÇÃO HÍBRIDA</span>
+                <strong>Pessoas no centro. IA ao seu lado.</strong>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Column 3: yRange ["-10%", "2%"] -->
+          <div class="af-gallery-col af-col-3" id="af-gallery-col-3">
+            <figure class="af-gallery-item" data-gallery-cat="vendas" data-agent-image="commerce" data-agent-title="Atendimento Ligado ao Catálogo e E-commerce">
+              <img src="assets/commerce.webp" width="1200" height="675" alt="Atendimento Ligado ao Catálogo e E-commerce" loading="lazy">
+              <figcaption>
+                <span>E-COMMERCE &amp; CATÁLOGO</span>
+                <strong>Entre a dúvida e a compra, uma boa conversa.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="agenda" data-agent-image="luma-support" data-agent-title="Luma no Suporte Contínuo e Acompanhamento">
+              <img src="assets/luma-support.webp" width="1200" height="675" alt="Luma no Suporte Contínuo e Acompanhamento" loading="lazy">
+              <figcaption>
+                <span>SUPORTE &amp; ROTINA · LUMA</span>
+                <strong>Acompanhamento contínuo com clareza.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="governo" data-agent-image="agent-flow" data-agent-title="Orquestração entre Bina, Samuel e Luma">
+              <img src="assets/agent-flow.webp" width="1200" height="675" alt="Orquestração entre Bina, Samuel e Luma" loading="lazy">
+              <figcaption>
+                <span>FLUXO MULTIAGENTE</span>
+                <strong>Regras claras entre recepção, vendas e agenda.</strong>
+              </figcaption>
+            </figure>
+            <figure class="af-gallery-item" data-gallery-cat="voz" data-agent-image="integration-reference" data-agent-title="Hub de Conexões e Integrações Operacionais">
+              <img src="assets/integration-reference.webp" width="1200" height="675" alt="Hub de Conexões e Integrações Operacionais" loading="lazy">
+              <figcaption>
+                <span>INTEGRAÇÕES &amp; API</span>
+                <strong>Conectado ao CRM, agenda e sistemas.</strong>
+              </figcaption>
+            </figure>
+          </div>
         </div>
-        <a href="#conversa" class="text-link">Conversar sobre esse cenário <i data-icon="arrow"></i></a>
-        <p class="caption">Exemplos visuais do projeto. As integrações reais são definidas no escopo de implantação.</p>
       </div>
     </div>
   </section>
 
-  <!-- CRIAÇÃO DE SITES, PORTAIS E SISTEMAS WEB -->
-  <section class="sites wrap section" id="sites">
-    <div class="site-preview">
-      <div class="browser-bar"><i></i><i></i><i></i><span>suaorganizacao.com.br</span></div>
-      <div class="mini-site">
-        <img src="assets/commerce.webp" width="1200" height="675" alt="Conceito visual de presença digital e e-commerce com IA" loading="lazy">
+  <!-- CRIAÇÃO DE SITES, PORTAIS E SISTEMAS WEB (21st.dev IntegrationHero + Scroll Animation) -->
+  <section class="af-integration-sites-section section" id="sites">
+    <div class="af-integration-dot-grid" aria-hidden="true"></div>
+
+    <div class="wrap af-integration-hero-inner">
+      <!-- Centered Header (21st.dev IntegrationHero structure) -->
+      <div class="af-sites-header" id="af-sites-header">
+        <span class="af-integration-pill">
+          <span class="dot"></span> ⚡ CRIAÇÃO DE SITES, PORTAIS &amp; ECOSSISTEMA INTEGRADO
+        </span>
+        <h2>Sua identidade.<br><em>Em cada detalhe.</em></h2>
+        <p class="af-sites-lead">
+          Criamos desde landing pages comerciais de alta conversão até portais institucionais e sistemas web estruturados para empresas e órgãos públicos — integrados nativamente à Bina, ao Samuel, à Luma e às ferramentas da sua operação.
+        </p>
+
+        <!-- Interactive Site Type Switcher Pills -->
+        <div class="af-sites-tabs" role="tablist" aria-label="Tipos de projetos web">
+          <button type="button" class="af-site-tab" role="tab" aria-selected="true" data-site-tab="comercial">
+            <i data-icon="spark"></i> Landing Pages Comerciais
+          </button>
+          <button type="button" class="af-site-tab" role="tab" aria-selected="false" data-site-tab="institucional">
+            <i data-icon="building"></i> Portais Institucionais
+          </button>
+          <button type="button" class="af-site-tab" role="tab" aria-selected="false" data-site-tab="gov">
+            <i data-icon="gov"></i> Portais Públicos &amp; Cidadão
+          </button>
+          <button type="button" class="af-site-tab" role="tab" aria-selected="false" data-site-tab="sistemas">
+            <i data-icon="code"></i> Sistemas Web Sob Medida
+          </button>
+        </div>
+
+        <div class="af-sites-cta-wrap">
+          <a class="button primary magnetic" href="#conversa">
+            Quero planejar meu site ou portal <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
-      <div class="site-tag">Design autoral + performance + atendimento integrado</div>
-    </div>
-    <div>
-      <div class="eyebrow"><span class="dot"></span> CRIAÇÃO DE SITES, PORTAIS E SISTEMAS</div>
-      <h2>Sua identidade.<br><em>Em cada detalhe.</em></h2>
-      <p>Criamos desde landing pages comerciais de alta conversão até portais institucionais e sistemas web estruturados para empresas e órgãos públicos.</p>
-      <ul class="site-features">
-        <li>Design autoral, navegação Liquid Glass e experiência mobile impecável</li>
-        <li>Arquitetura acessível (WCAG AA), rápida e otimizada para leitura clara</li>
-        <li>Pronto para receber a Bina, o Samuel e a Luma integrados à jornada</li>
-      </ul>
-      <div class="site-showcase">
-        <span><i data-icon="spark"></i> Landing Pages Comerciais</span>
-        <span><i data-icon="building"></i> Portais Institucionais</span>
-        <span><i data-icon="gov"></i> Portais Públicos &amp; Cidadão</span>
-        <span><i data-icon="code"></i> Sistemas Web Sob Medida</span>
+
+      <!-- 21st.dev Dual Counter-Scrolling Integration Carousel + Scroll Velocity Animation -->
+      <div class="af-integration-carousel" id="af-integration-carousel" aria-label="Tecnologias e canais integrados">
+        <!-- Row 1: Scrolls Left + Scroll Parallax -->
+        <div class="af-integration-track-wrap">
+          <div class="af-integration-track animate-scroll-left" id="af-track-row-1">
+            <!-- Set A -->
+            <div class="af-tool-orb" title="WhatsApp Business API"><i data-icon="messages"></i><span>WhatsApp API</span></div>
+            <div class="af-tool-orb is-accent" title="Bina Voice 3D"><i data-icon="wave"></i><span>Bina Voice</span></div>
+            <div class="af-tool-orb" title="Samuel Pipeline CRM"><i data-icon="chart"></i><span>Samuel CRM</span></div>
+            <div class="af-tool-orb" title="Luma Agenda Conectada"><i data-icon="calendar"></i><span>Luma Agenda</span></div>
+            <div class="af-tool-orb" title="Landing Pages Alta Conversão"><i data-icon="globe"></i><span>Landing Pages</span></div>
+            <div class="af-tool-orb" title="Base Documental RAG"><i data-icon="files"></i><span>Base RAG</span></div>
+            <div class="af-tool-orb" title="Portais Públicos & Gov.br"><i data-icon="gov"></i><span>Portais Gov</span></div>
+            <div class="af-tool-orb" title="Segurança, LGPD & WCAG AA"><i data-icon="shield"></i><span>LGPD &amp; WCAG</span></div>
+            <div class="af-tool-orb" title="APIs, Webhooks & Sistemas"><i data-icon="code"></i><span>Webhooks API</span></div>
+            <div class="af-tool-orb" title="Handoff Equipe Humana"><i data-icon="handoff"></i><span>Handoff Humano</span></div>
+            <!-- Set B (Duplicate for seamless 21st.dev -50% loop) -->
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="messages"></i><span>WhatsApp API</span></div>
+            <div class="af-tool-orb is-accent" aria-hidden="true"><i data-icon="wave"></i><span>Bina Voice</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="chart"></i><span>Samuel CRM</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="calendar"></i><span>Luma Agenda</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="globe"></i><span>Landing Pages</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="files"></i><span>Base RAG</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="gov"></i><span>Portais Gov</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="shield"></i><span>LGPD &amp; WCAG</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="code"></i><span>Webhooks API</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="handoff"></i><span>Handoff Humano</span></div>
+          </div>
+        </div>
+
+        <!-- Row 2: Scrolls Right + Scroll Parallax -->
+        <div class="af-integration-track-wrap">
+          <div class="af-integration-track animate-scroll-right" id="af-track-row-2">
+            <!-- Set A -->
+            <div class="af-tool-orb" title="E-commerce & Catálogos"><i data-icon="layers"></i><span>Catálogo IA</span></div>
+            <div class="af-tool-orb" title="Portais Institucionais"><i data-icon="building"></i><span>Institucional</span></div>
+            <div class="af-tool-orb is-accent" title="Atende Franca Core"><i data-icon="brand"></i><span>Atende Core</span></div>
+            <div class="af-tool-orb" title="Google Meu Negócio & SEO"><i data-icon="pin"></i><span>Google &amp; SEO</span></div>
+            <div class="af-tool-orb" title="Atendimento Omnichannel"><i data-icon="people"></i><span>Omnichannel</span></div>
+            <div class="af-tool-orb" title="Orquestração Multiagente"><i data-icon="workflow"></i><span>Multiagente</span></div>
+            <div class="af-tool-orb" title="Triagem por Voz"><i data-icon="phone"></i><span>Triagem Voz</span></div>
+            <div class="af-tool-orb" title="Automação Inteligente"><i data-icon="spark"></i><span>Automação IA</span></div>
+            <div class="af-tool-orb" title="Painel & Métricas"><i data-icon="chart"></i><span>Analytics</span></div>
+            <div class="af-tool-orb" title="Conformidade & Auditoria"><i data-icon="shield"></i><span>Auditoria</span></div>
+            <!-- Set B (Duplicate for seamless 21st.dev -50% loop) -->
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="layers"></i><span>Catálogo IA</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="building"></i><span>Institucional</span></div>
+            <div class="af-tool-orb is-accent" aria-hidden="true"><i data-icon="brand"></i><span>Atende Core</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="pin"></i><span>Google &amp; SEO</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="people"></i><span>Omnichannel</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="workflow"></i><span>Multiagente</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="phone"></i><span>Triagem Voz</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="spark"></i><span>Automação IA</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="chart"></i><span>Analytics</span></div>
+            <div class="af-tool-orb" aria-hidden="true"><i data-icon="shield"></i><span>Auditoria</span></div>
+          </div>
+        </div>
+
+        <!-- Edge Fade Overlays -->
+        <div class="af-carousel-fade is-left" aria-hidden="true"></div>
+        <div class="af-carousel-fade is-right" aria-hidden="true"></div>
       </div>
-      <br>
-      <a class="button primary magnetic" href="#conversa">Quero planejar meu site ou portal <span aria-hidden="true">↗</span></a>
+
+      <!-- Uncropped 16:9 Scroll-Animated Browser Showcase with Real Mini-System Templates (No Scroll) -->
+      <div class="af-browser-stage" id="af-sites-browser-stage">
+        <div class="site-preview af-sites-browser-window" id="af-sites-browser-window">
+          <div class="browser-bar">
+            <i></i><i></i><i></i>
+            <span id="af-site-url">suaorganizacao.com.br/catalogo-ia</span>
+            <em class="af-browser-badge" id="af-site-badge">LANDING PAGE + IA</em>
+          </div>
+
+          <div class="mini-site af-mini-site-16x9" id="af-mini-site-viewport">
+
+            <!-- TEMPLATE 1: LANDING PAGES COMERCIAIS -->
+            <div class="af-tpl-screen is-active" data-site-template="comercial">
+              <header class="af-tpl-lp-nav">
+                <div class="af-tpl-brand">
+                  <span class="af-tpl-brand-dot"></span>
+                  <strong>AURA COMMERCE</strong>
+                  <small>CATÁLOGO + IA</small>
+                </div>
+                <nav class="af-tpl-nav-links">
+                  <span>Soluções</span>
+                  <span>Catálogo Interativo</span>
+                  <span>Planos</span>
+                  <span>Depoimentos</span>
+                </nav>
+                <span class="af-tpl-nav-cta">Falar com Especialista ↗</span>
+              </header>
+
+              <div class="af-tpl-lp-body">
+                <div class="af-tpl-lp-copy">
+                  <span class="af-tpl-kicker">⚡ ALTA CONVERSÃO • WHATSAPP &amp; WEB INTEGRADOS</span>
+                  <h3>Entre a dúvida e a compra,<br><em>uma resposta imediata.</em></h3>
+                  <p>Landing page desenhada para converter visitantes em propostas reais, com catálogo conectado à Bina e qualificação automática no pipeline do Samuel.</p>
+
+                  <div class="af-tpl-lp-metrics">
+                    <div>
+                      <strong>+38,4%</strong>
+                      <span>Taxa de conversão</span>
+                    </div>
+                    <div>
+                      <strong>2,4 seg</strong>
+                      <span>Tempo de resposta IA</span>
+                    </div>
+                    <div>
+                      <strong>R$ 142k</strong>
+                      <span>Pipeline mensal gerado</span>
+                    </div>
+                  </div>
+
+                  <div class="af-tpl-lp-actions">
+                    <span class="af-tpl-btn-primary">Simular Proposta Agora →</span>
+                    <span class="af-tpl-btn-ghost">Ver Catálogo Completo</span>
+                  </div>
+                </div>
+
+                <div class="af-tpl-lp-showcase">
+                  <div class="af-tpl-product-card">
+                    <div class="af-tpl-product-head">
+                      <span class="af-tpl-tag">MAIS ESCOLHIDO</span>
+                      <strong>Plano Enterprise Omnichannel</strong>
+                      <em>R$ 1.490<small>/mês</small></em>
+                    </div>
+                    <div class="af-tpl-product-bars">
+                      <div class="af-tpl-bar-row">
+                        <span>Qualificação Comercial (Samuel)</span>
+                        <strong>96%</strong>
+                      </div>
+                      <div class="af-tpl-progress"><i style="width:96%"></i></div>
+                      <div class="af-tpl-bar-row">
+                        <span>Agendamento Automático (Luma)</span>
+                        <strong>89%</strong>
+                      </div>
+                      <div class="af-tpl-progress"><i style="width:89%"></i></div>
+                    </div>
+                  </div>
+
+                  <div class="af-tpl-live-widget">
+                    <div class="af-tpl-widget-top">
+                      <span class="af-tpl-online-dot"></span>
+                      <strong>Bina • Consultora Comercial</strong>
+                      <small>Ao vivo</small>
+                    </div>
+                    <p>“Olá! Vi que você está comparando os modelos corporativos. Quer receber o comparativo técnico no seu WhatsApp ou agendar 15 min com nosso especialista?”</p>
+                    <div class="af-tpl-widget-chips">
+                      <span>Receber no WhatsApp</span>
+                      <span>Agendar demonstração</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TEMPLATE 2: PORTAIS INSTITUCIONAIS -->
+            <div class="af-tpl-screen" data-site-template="institucional" hidden>
+              <header class="af-tpl-corp-nav">
+                <div class="af-tpl-brand is-dark">
+                  <span class="af-tpl-brand-square">V</span>
+                  <strong>GRUPO VÉRTICE</strong>
+                  <small>PORTAL CORPORATIVO</small>
+                </div>
+                <nav class="af-tpl-nav-links is-dark">
+                  <span class="is-current">A Organização</span>
+                  <span>Unidades &amp; Operações</span>
+                  <span>Governança &amp; ESG</span>
+                  <span>Imprensa</span>
+                  <span>Canal do Cliente</span>
+                </nav>
+                <span class="af-tpl-corp-badge">ISO 27001 • LGPD</span>
+              </header>
+
+              <div class="af-tpl-corp-body">
+                <div class="af-tpl-corp-main">
+                  <div class="af-tpl-corp-hero-card">
+                    <span class="af-tpl-corp-eyebrow">PRESENÇA INSTITUCIONAL &amp; GOVERNANÇA</span>
+                    <h3>Solidez corporativa com atendimento inteligente em todas as unidades.</h3>
+                    <p>Arquitetura editorial clara, credibilidade para investidores e parceiros, e recepção digital integrada aos setores da empresa.</p>
+                    <div class="af-tpl-corp-stats">
+                      <div><strong>18 anos</strong><span>Histórico de mercado</span></div>
+                      <div><strong>14 unidades</strong><span>Atendimento integrado</span></div>
+                      <div><strong>99,9% SLA</strong><span>Disponibilidade digital</span></div>
+                    </div>
+                  </div>
+
+                  <div class="af-tpl-corp-departments">
+                    <div class="af-tpl-dept-card">
+                      <strong>Comercial &amp; Parcerias B2B</strong>
+                      <span>Qualificação de fornecedores e novos negócios com Samuel</span>
+                      <em>Acessar canal →</em>
+                    </div>
+                    <div class="af-tpl-dept-card">
+                      <strong>Financeiro &amp; Faturamento</strong>
+                      <span>2ª via de boletos, notas fiscais e contratos validados</span>
+                      <em>Acessar canal →</em>
+                    </div>
+                    <div class="af-tpl-dept-card">
+                      <strong>Governança, Compliance &amp; LGPD</strong>
+                      <span>Relatórios de transparência, políticas e canal ético</span>
+                      <em>Acessar canal →</em>
+                    </div>
+                  </div>
+                </div>
+
+                <aside class="af-tpl-corp-sidebar">
+                  <div class="af-tpl-corp-panel">
+                    <div class="af-tpl-panel-header">
+                      <strong>Central Institucional Integrada</strong>
+                      <span>Triagem Inteligente</span>
+                    </div>
+                    <ul class="af-tpl-corp-list">
+                      <li>
+                        <span class="status-ok">●</span>
+                        <div>
+                          <strong>Matriz &amp; Filiais Conectadas</strong>
+                          <small>Roteamento automático por região e CNPJ</small>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="status-ok">●</span>
+                        <div>
+                          <strong>Base Documental Oficial (RAG)</strong>
+                          <small>Respostas baseadas em manuais e políticas internas</small>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="status-ok">●</span>
+                        <div>
+                          <strong>Agendamento Executivo (Luma)</strong>
+                          <small>Salas e especialistas sincronizados em tempo real</small>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="af-tpl-corp-footer-note">
+                      Protocolo único entre Portal Web, WhatsApp e Telefonia
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+
+            <!-- TEMPLATE 3: PORTAIS PÚBLICOS & CIDADÃO -->
+            <div class="af-tpl-screen" data-site-template="gov" hidden>
+              <div class="af-tpl-gov-topbar">
+                <span>🇧🇷 PORTAL OFICIAL DE SERVIÇOS PÚBLICOS &amp; TRANSPARÊNCIA</span>
+                <div class="af-tpl-gov-a11y">
+                  <span>WCAG AA</span>
+                  <span>Alto Contraste</span>
+                  <span>A+</span>
+                  <span>A-</span>
+                  <span>VLibras</span>
+                  <span>Acesso à Informação (LAI)</span>
+                </div>
+              </div>
+
+              <div class="af-tpl-gov-search-band">
+                <div class="af-tpl-gov-title-row">
+                  <div>
+                    <strong>Portal do Cidadão • Atendimento Digital 24h</strong>
+                    <span>Serviços públicos estruturados com linguagem simples e busca orientada por IA</span>
+                  </div>
+                  <span class="af-tpl-gov-live-pill">● Bina Cidadão Online</span>
+                </div>
+                <div class="af-tpl-gov-searchbar">
+                  <i data-icon="spark"></i>
+                  <span>O que você precisa resolver hoje? Ex: 2ª via de IPTU, agendamento UBS, protocolo 156, editais...</span>
+                  <kbd>Buscar Serviço</kbd>
+                </div>
+              </div>
+
+              <div class="af-tpl-gov-body">
+                <div class="af-tpl-gov-services">
+                  <div class="af-tpl-gov-card">
+                    <span class="gov-tag">TRIBUTOS &amp; FAZENDA</span>
+                    <strong>2ª Via de IPTU, ISS e Certidões</strong>
+                    <p>Emissão instantânea de guias e certidão negativa pelo CPF/CNPJ.</p>
+                  </div>
+                  <div class="af-tpl-gov-card">
+                    <span class="gov-tag">SAÚDE MUNICIPAL</span>
+                    <strong>Agendamento UBS &amp; Exames</strong>
+                    <p>Marcação de consultas, confirmação via WhatsApp e lembretes Luma.</p>
+                  </div>
+                  <div class="af-tpl-gov-card">
+                    <span class="gov-tag">OUVIDORIA &amp; ZELADORIA</span>
+                    <strong>Protocolo Cidadão 156</strong>
+                    <p>Solicitação de serviços urbanos e acompanhamento por protocolo.</p>
+                  </div>
+                  <div class="af-tpl-gov-card">
+                    <span class="gov-tag">TRANSPARÊNCIA ATIVA</span>
+                    <strong>Diário Oficial, Licitações &amp; Leis</strong>
+                    <p>Consulta pública assistida pela base documental oficial (RAG).</p>
+                  </div>
+                </div>
+
+                <div class="af-tpl-gov-assistant">
+                  <div class="af-tpl-gov-assistant-head">
+                    <strong>Atendimento Oficial Guiado</strong>
+                    <span>Base Legal Verificada</span>
+                  </div>
+                  <div class="af-tpl-gov-msg">
+                    <small>Dúvida do Cidadão</small>
+                    <p>“Quais documentos preciso levar para renovar o alvará de funcionamento?”</p>
+                  </div>
+                  <div class="af-tpl-gov-msg is-reply">
+                    <small>Bina • Fonte: Decreto Municipal nº 4.812/2026</small>
+                    <p>“Você pode enviar tudo digitalmente aqui no portal: RG/CPF, Contrato Social e AVCB vigente. Deseja iniciar o protocolo agora?”</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TEMPLATE 4: SISTEMAS WEB SOB MEDIDA (21st.dev SaaS Dashboard & Admin Panel) -->
+            <div class="af-tpl-screen" data-site-template="sistemas" hidden>
+              <div class="af-tpl-saas-layout">
+                <aside class="af-tpl-saas-sidebar">
+                  <div class="af-tpl-saas-logo">
+                    <span class="dot"></span>
+                    <strong>ATENDE OS</strong>
+                  </div>
+                  <nav class="af-tpl-saas-menu">
+                    <span class="is-active"><i data-icon="chart"></i> Visão Geral</span>
+                    <span><i data-icon="messages"></i> Conversas IA</span>
+                    <span><i data-icon="workflow"></i> Pipeline CRM</span>
+                    <span><i data-icon="calendar"></i> Agenda Luma</span>
+                    <span><i data-icon="files"></i> Base RAG</span>
+                    <span><i data-icon="code"></i> Webhooks API</span>
+                  </nav>
+                  <div class="af-tpl-saas-status">
+                    <span>● API Gateway 99.98%</span>
+                    <small>Latência média: 14ms</small>
+                  </div>
+                </aside>
+
+                <div class="af-tpl-saas-main">
+                  <header class="af-tpl-saas-topbar">
+                    <div>
+                      <strong>Painel Operacional &amp; Ecossistema Multiagente</strong>
+                      <span>Sincronização em tempo real • ERP, CRM, WhatsApp e Telefonia</span>
+                    </div>
+                    <div class="af-tpl-saas-pills">
+                      <span class="is-active">Tempo Real</span>
+                      <span>Últimos 30 dias</span>
+                      <span class="is-export">Exportar Relatório ↗</span>
+                    </div>
+                  </header>
+
+                  <div class="af-tpl-saas-kpis">
+                    <div class="af-tpl-kpi-card">
+                      <span>Volume em Pipeline (Samuel)</span>
+                      <strong>R$ 284.500</strong>
+                      <em class="up">▲ +28,4% vs. mês anterior</em>
+                    </div>
+                    <div class="af-tpl-kpi-card">
+                      <span>Atendimentos Resolvidos (Bina)</span>
+                      <strong>1.482</strong>
+                      <em class="up">▲ 94,6% sem fila de espera</em>
+                    </div>
+                    <div class="af-tpl-kpi-card">
+                      <span>Reuniões Confirmadas (Luma)</span>
+                      <strong>318</strong>
+                      <em class="up">▲ -62% taxa de no-show</em>
+                    </div>
+                    <div class="af-tpl-kpi-card">
+                      <span>Eventos Webhook / API</span>
+                      <strong>48.920</strong>
+                      <em class="cyan">● 100% entregues com log</em>
+                    </div>
+                  </div>
+
+                  <div class="af-tpl-saas-grid">
+                    <div class="af-tpl-chart-card">
+                      <div class="af-tpl-card-head">
+                        <strong>Conversões &amp; Atendimentos por Canal</strong>
+                        <span>WhatsApp • Voz • Portal Web</span>
+                      </div>
+                      <svg class="af-tpl-svg-chart" viewBox="0 0 460 135" fill="none" aria-hidden="true">
+                        <!-- Grid lines -->
+                        <line x1="0" y1="25" x2="460" y2="25" stroke="rgba(24,24,27,0.08)" stroke-dasharray="3 3"/>
+                        <line x1="0" y1="65" x2="460" y2="65" stroke="rgba(24,24,27,0.08)" stroke-dasharray="3 3"/>
+                        <line x1="0" y1="105" x2="460" y2="105" stroke="rgba(24,24,27,0.08)" stroke-dasharray="3 3"/>
+                        <!-- Minimalist Zinc & Carbon Bars -->
+                        <rect x="18" y="68" width="16" height="52" rx="4" fill="#d4d4d8"/>
+                        <rect x="38" y="48" width="16" height="72" rx="4" fill="#18181b"/>
+                        <rect x="82" y="56" width="16" height="64" rx="4" fill="#d4d4d8"/>
+                        <rect x="102" y="34" width="16" height="86" rx="4" fill="#18181b"/>
+                        <rect x="146" y="44" width="16" height="76" rx="4" fill="#d4d4d8"/>
+                        <rect x="166" y="24" width="16" height="96" rx="4" fill="#18181b"/>
+                        <rect x="210" y="50" width="16" height="70" rx="4" fill="#d4d4d8"/>
+                        <rect x="230" y="28" width="16" height="92" rx="4" fill="#18181b"/>
+                        <rect x="274" y="36" width="16" height="84" rx="4" fill="#d4d4d8"/>
+                        <rect x="294" y="18" width="16" height="102" rx="4" fill="#18181b"/>
+                        <rect x="338" y="30" width="16" height="90" rx="4" fill="#d4d4d8"/>
+                        <rect x="358" y="12" width="16" height="108" rx="4" fill="#18181b"/>
+                        <rect x="402" y="22" width="16" height="98" rx="4" fill="#a1a1aa"/>
+                        <rect x="422" y="6" width="16" height="114" rx="4" fill="#2563eb"/>
+                        <!-- Subtle Detail Trend Line -->
+                        <path d="M26 55 C85 42, 150 28, 220 30 C290 32, 355 15, 430 8" stroke="#6366f1" stroke-width="2.2" fill="none"/>
+                      </svg>
+                    </div>
+
+                    <div class="af-tpl-feed-card">
+                      <div class="af-tpl-card-head">
+                        <strong>Eventos &amp; Webhooks ao Vivo</strong>
+                        <span>API v2</span>
+                      </div>
+                      <ul class="af-tpl-webhook-list">
+                        <li>
+                          <span class="badge-ok">200 OK</span>
+                          <div>
+                            <strong>deal.qualified • Samuel CRM</strong>
+                            <small>Lead corporativo movido para Proposta • R$ 18.400</small>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="badge-ok">200 OK</span>
+                          <div>
+                            <strong>calendar.booked • Luma Agenda</strong>
+                            <small>Reunião técnica confirmada • Amanhã às 14:30</small>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="badge-ok">200 OK</span>
+                          <div>
+                            <strong>voice.Resolved • Bina Voice</strong>
+                            <small>Triagem concluída com transcrição no prontuário</small>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="af-browser-footer-bar">
+            <span id="af-site-caption">Design autoral + performance + atendimento integrado com Bina, Samuel e Luma</span>
+            <a href="#conversa" class="af-browser-cta">Solicitar escopo deste modelo <i data-icon="arrow"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
