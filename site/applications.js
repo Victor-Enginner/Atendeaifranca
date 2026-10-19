@@ -194,12 +194,30 @@ function mapRange(value, inMin, inMax, outMin, outMax) {
 function updateAnimatedGalleryScroll() {
   if (!galleryScrollEl || !gallery3dEl) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    galleryScrollEl.style.removeProperty('height');
     gallery3dEl.style.transform = 'none';
     if (galleryCol1) galleryCol1.style.transform = 'none';
     if (galleryCol2) galleryCol2.style.transform = 'none';
     if (galleryCol3) galleryCol3.style.transform = 'none';
     return;
   }
+
+  if (window.matchMedia('(max-width: 760px)').matches) {
+    const sticky = gallery3dEl.parentElement;
+    const viewportHeight = window.innerHeight;
+    const travel = Math.max(0, gallery3dEl.offsetHeight - sticky.clientHeight + 48);
+    const sectionHeight = sticky.offsetHeight + travel + viewportHeight * 0.35;
+    galleryScrollEl.style.height = `${Math.ceil(sectionHeight)}px`;
+    const rect = galleryScrollEl.getBoundingClientRect();
+    const progress = clamp01((92 - rect.top) / Math.max(1, sectionHeight - sticky.offsetHeight));
+    const tilt = mapRange(progress, 0, 0.45, 16, 0);
+    const scale = mapRange(progress, 0, 0.45, 0.98, 1);
+    gallery3dEl.style.transform = `translate3d(0, ${(-travel * progress).toFixed(1)}px, 0) perspective(1000px) rotateX(${tilt.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+    gallery3dEl.style.setProperty('--gallery-drift', `${(Math.sin(progress * Math.PI) * 16).toFixed(1)}px`);
+    return;
+  }
+
+  galleryScrollEl.style.removeProperty('height');
 
   const rect = galleryScrollEl.getBoundingClientRect();
   const winH = window.innerHeight || document.documentElement.clientHeight;

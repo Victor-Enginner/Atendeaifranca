@@ -7,6 +7,7 @@
 - GitHub é o repositório de backup e histórico. GitHub Pages não é o destino de produção escolhido pelo usuário.
 - Preservar o trabalho visual existente. Não redesenhar, trocar assets, alterar cores ou refatorar sem solicitação específica.
 - Fluidez e estabilidade são prioridades do usuário. Evitar dependências, animações e scripts adicionais sem necessidade comprovada.
+- O usuário quer preservar os efeitos da galeria de cenários no celular. Melhorar enquadramento e leitura mantendo animação 3D e movimento com o scroll; não substituir por uma galeria estática sem solicitação.
 - Antes de declarar deploy concluído, verificar que HTML, CSS, JavaScript e assets publicados correspondem a `site/`, e conferir o resultado visual.
 - Registrar decisões confirmadas e contexto relevante no projeto. Não inventar conversas ou decisões de sessões do Antigravity às quais não houve acesso.
 
