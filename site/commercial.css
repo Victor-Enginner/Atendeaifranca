@@ -2074,24 +2074,61 @@
   text-decoration: underline;
 }
 
+#segmentos .segments {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+
 @media (max-width: 860px) {
+  #segmentos .segments {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .af-mini-site-16x9 {
     aspect-ratio: auto;
     min-height: 540px !important;
+  }
+  .af-tpl-screen {
+    position: relative;
+    inset: auto;
+    height: auto;
+    min-height: 540px;
+    overflow: visible !important;
+    overflow-wrap: anywhere;
+  }
+  .af-tpl-screen * {
+    min-width: 0;
+  }
+  .af-tpl-lp-nav,
+  .af-tpl-corp-nav,
+  .af-tpl-gov-topbar,
+  .af-tpl-gov-a11y,
+  .af-tpl-gov-title-row,
+  .af-tpl-gov-searchbar,
+  .af-tpl-saas-topbar,
+  .af-tpl-saas-pills,
+  .af-tpl-card-head {
+    flex-wrap: wrap;
+    gap: 8px;
   }
   .af-tpl-lp-body,
   .af-tpl-corp-body,
   .af-tpl-gov-body,
   .af-tpl-saas-layout,
   .af-tpl-saas-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .af-tpl-saas-layout {
+    height: auto;
+  }
+  .af-tpl-corp-departments {
+    grid-template-columns: minmax(0, 1fr);
   }
   .af-tpl-saas-sidebar,
   .af-tpl-nav-links {
     display: none;
   }
   .af-tpl-saas-kpis {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .af-browser-badge {
     display: none;
@@ -2099,6 +2136,12 @@
   .af-browser-footer-bar {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  #segmentos .segments {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
